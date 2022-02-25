@@ -40,7 +40,12 @@ The globalisation process has led the online shopping malls develop more and mor
   </tr>
 </table>
 
+
 ## :dizzy:Technologies Used
+
+_<h3>Framework:</h3>_
+Angular
+
 
 _<h3>Front-end:</h3>_
 
