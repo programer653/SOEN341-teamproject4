@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
+
+/*--css for P9--*/
+td, th {
+		text-align: left;
+        padding: 8px;
+    }
+	
+	th {
+		background-color: #8fbc8f;
+    }
+	
+	tr:nth-child(even) {
+        background-color: #f2f2f2; 
+    }
+  
+    tr:hover {background-color: #d7d4a7;} 
+	
+	.tabletd{
+		background-color: #d7d4a7;
+	}
+	
+@media only screen and (min-width: 992px) {
+	table {
+		width: 80%;
+		margin-left: 3.5%;
+    } 
+}
+
+@media only screen and (min-width: 830px) and (max-width: 992px) {
+	table {
+        width: 70%;
+	    margin-left: 2%;
+    }
+}
+
+@media only screen and (max-width: 830px){
+	table {
+        width: 150px;
+        font-size: 5px;
+	    margin-left: 0.5%;
+    }
+}
+
+
+/*--css for P10--*/
+.userprofiletitle{
+    margin-left: 3.5%;
+}
+
+.userprofile{
+    margin-left: 42%;
+}

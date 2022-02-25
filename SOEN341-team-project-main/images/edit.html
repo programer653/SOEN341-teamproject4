@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>    </title>
+	<script src="p10load.js" async></script>
+</head>
+  
+<body>
+
+
+<?php
+include "dbConn.php"; // Using database connection file here
+$id = $_GET['UID']; // get id through query string
+$sele = mysqli_query($db,"select * from users where UID = '$id'"); // select query
+$data = mysqli_fetch_array($sele);
+?>
+
+<script type="text/javascript">
+    sessionStorage.clear();
+    sessionStorage.r1 = <?php echo "$data['UID']" ?>;
+	sessionStorage.r2 = <?php echo "$data['FirstName']" ?>;
+	sessionStorage.r3 = <?php echo "$data['LastName']" ?>;
+	sessionStorage.r4 = <?php echo "$data['Email']" ?>;
+	sessionStorage.r5 = <?php echo "$data['Password']" ?>;
+    
+</script>
+
+<?php
+mysqli_close($db);
+header("location:p10.php");
+exit;	
+?>
+
+
+
+
+
+</body>
+  
+<html>
