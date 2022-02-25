@@ -44,8 +44,8 @@ The globalisation process has led the online shopping malls develop more and mor
 ## :dizzy:Technologies Used
 
 _<h3>Framework:</h3>_
-Angular
 
+![Angular](https://badges.aleen42.com/src/angular.svg)
 
 _<h3>Front-end:</h3>_
 
