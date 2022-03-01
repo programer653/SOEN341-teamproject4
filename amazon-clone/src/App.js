@@ -28,6 +28,8 @@ function App() {
                     {/* page2 --> the cart page  */}
                     {/* page3 --> filtering page */}
                     {/* page4 --> the promotion page */}
+                    {/* page5 --> login page  */}
+
     
 
                     {/* pageX --> the default page, home page */}
