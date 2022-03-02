@@ -4,10 +4,9 @@
  */
 
 
-
-
 /* this is for the header as a whole */
-.header{
+
+.header {
     height: 60px;
     display: flex;
     align-items: center;
@@ -19,6 +18,7 @@
 
 
 /* this is for the logo  */
+
 .header__logo {
     width: 100px;
     object-fit: contain;
@@ -26,44 +26,46 @@
     margin-top: 18px;
 }
 
+
 /* this is going to be the search bar sizing */
+
 .header__search {
     display: flex;
-    flex:1;
+    flex: 1;
     align-items: center;
     border-radius: 24px;
 }
 
+
 /* this is the white search box size */
+
 .header__searchInput {
-    height:12px; 
+    height: 12px;
     padding: 10px;
     border: none;
     width: 100%;
 }
 
+
 /* search icon logo */
+
 .header__searchIcon {
     padding: 5px;
     height: 22px !important;
     background-color: #cd9042;
 }
 
-
-.header__optionLineOne{
+.header__optionLineOne {
     font-size: 10px;
-
 }
 
-
-.header__optionLineTwo{
+.header__optionLineTwo {
     font-size: 13px;
     font-weight: 800;
-    
 }
 
-.header__optionBasket{
-    display: flex; 
+.header__optionBasket {
+    display: flex;
     align-items: center;
     color: white;
 }
@@ -74,19 +76,17 @@
 }
 
 .header__nav {
-    display: flex; 
+    display: flex;
     justify-content: space-evenly;
 }
 
 
-
 /* change the position of the options in the header (hello Guest, order, etc. */
-.header__option{
 
-    display: flex; 
+.header__option {
+    display: flex;
     flex-direction: column;
     margin-left: 10px;
     margin-right: 10px;
-    color:white;
-
+    color: white;
 }
