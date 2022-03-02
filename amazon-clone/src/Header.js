@@ -12,7 +12,11 @@ import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 // this will import Link to direct pages when clicked
 import {Link} from "react-router-dom";
 
-function header() {
+import {useStateValue} from "./StateProvider";
+
+function Header() {
+  const[{basket}, dispatch] = useStateValue();
+
   return (
     <div className = "header">
 
@@ -56,7 +60,7 @@ function header() {
                   <div className="header__optionBasket">
                       <ShoppingBasketIcon />
                       {/* this is going to be having two classNames, and there is a space in between */}
-                      <span className = "header__optionLineTwo header__basketCount">0</span>
+                      <span className = "header__optionLineTwo header__basketCount">{basket?.length}</span>
                   </div>
                 </Link>
 
@@ -71,4 +75,4 @@ function header() {
   )
 }
 
-export default header
+export default Header
