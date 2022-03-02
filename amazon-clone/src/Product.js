@@ -11,7 +11,6 @@ function Product({id, title, price, rating, image }) {
 
   return (
     < div className = "product">
-
         {/* this is where we are going to be putting the id, price, name, photo of the product */}
         <div className = "product__info">
             <p>{title}</p>
