@@ -4,6 +4,11 @@ import "./Product.css";
 
 // to promote reusability, we are going to be making functions that we could call when needed
 function Product({id, title, price, rating, image }) {
+
+    const ADD_TO_BASKET = {
+        //dispatch the item into the data layer
+    }
+
   return (
     <div className = "product">
 
@@ -30,7 +35,7 @@ function Product({id, title, price, rating, image }) {
         alt = ""
         />
 
-        <button>
+        <button onClick={ADD_TO_BASKET}>
             Add to Cart 
         </button>
     </div>

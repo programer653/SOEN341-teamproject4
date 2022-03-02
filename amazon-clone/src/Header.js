@@ -9,25 +9,28 @@ import './Header.css'
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 
+// this will import Link to direct pages when clicked
+import {Link} from "react-router-dom";
+
 function header() {
   return (
     <div className = "header">
+
+      {/* This will direct the user to the home page when the logo is clicked */}
+      <Link to="/">
         <img className = "header__logo"
-        src = "https://logodix.com/logo/595167.png" 
-        />
+          src = "https://logodix.com/logo/595167.png" 
+          />
+      </Link>
 
         <div className = "header__search">
 
-            <input 
-            className = "header__searchInput" 
-            type = "text"/>
+            <input className = "header__searchInput" type = "text"/>
 
             {/* logo */}
             <SearchIcon className = "header__searchIcon" />
 
-
             <div className = "header__nav">
-
 
                 <div className = "header__option">
                   
@@ -48,11 +51,14 @@ function header() {
 
                 </div>
 
-                <div className="header__optionBasket">
-                    <ShoppingBasketIcon />
-                    {/* this is going to be having two classNames, and there is a space in between */}
-                    <span className = "header__optionLineTwo header__basketCount">0</span>
-                </div>
+                {/* This will direct the user to the checkout page when the cart is clicked */}
+                <Link to="/checkout">
+                  <div className="header__optionBasket">
+                      <ShoppingBasketIcon />
+                      {/* this is going to be having two classNames, and there is a space in between */}
+                      <span className = "header__optionLineTwo header__basketCount">0</span>
+                  </div>
+                </Link>
 
             </div>
             

@@ -1,17 +1,29 @@
-import React from 'react'
+import React from "react";
 import "./Checkout.css";
-
+import Subtotal from "./Subtotal";
 
 function Checkout() {
   return (
     <div className = "checkout">
-        <div className = "checkout__left">
-            <img className = "checkout__ad" src = "https://www.freekadeal.com/wp-content/uploads/2017/06/Amazon-Pay-Balance-Add-Money-Offer-2.png"
-            />
-        </div>
+      <div className = "checkout__left">
+          <img className = "checkout__ad" src = "https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg" alt=""/>
 
+          <div>
+            <h2 className="checkout__title">Your Cart</h2>
+            {/* CartItem */}
+            {/* CartItem */}
+            {/* CartItem */}
+            {/* CartItem */}
+            {/* CartItem */}
+          </div>
+      </div> 
+
+          <div className="checkout__right">
+            <Subtotal/>
+          </div>
+       
     </div>
-  )
+  );
 }
 
 export default Checkout

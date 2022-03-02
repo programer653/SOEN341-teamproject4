@@ -2,8 +2,9 @@ import React from "react";
 import './App.css';
 import Header from './Header';
 import Home from './Home';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Checkout from "./Checkout";
+
 
 
 function App() {
@@ -18,32 +19,27 @@ function App() {
 
                 {/* THIS IS WHERE THE <SWITCH></SWITCH> SHOULD BE PLACED FOR CASES */}
                 {/* Switch --> Routes in the newer version of React */}
-                <Routes>
+                <Switch>
 
                     {/* page1 --> the checkout page */}
                     <Route path="/Checkout">
                         <Checkout />
                     </Route>
-
                     {/* page2 --> the cart page  */}
                     {/* page3 --> filtering page */}
                     {/* page4 --> the promotion page */}
                     {/* page5 --> login page  */}
 
-    
-
                     {/* pageX --> the default page, home page */}
                     {/* this is the default route */}
                     <Route path="/">
-                        <Home />
+                        <Home/>
                     </Route>
-
-                </Routes>
-
-
+                </Switch>
         </div>
     </Router>
     );
 }
+
 
 export default App;
