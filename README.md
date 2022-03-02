@@ -45,8 +45,7 @@ The globalisation process has led the online shopping malls develop more and mor
 
 _<h3>Framework:</h3>_
 
-![Angular](https://badges.aleen42.com/src/angular.svg)
-
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 _<h3>Front-end:</h3>_
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -59,20 +58,15 @@ _<h3>Back-end:</h3>_
 
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
-![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 
 ## :computer:How to run this project?
 The following are the instructions of how to run this project:
- - Install XAMPP through the following link:
-    - `https://www.apachefriends.org/index.html`
-- Run XAMPP, and click `Manage Servers` tab. 
-- Click `Start All` button at the bottom.
-- Wait until all servers' status is `Running`. Make sure that `Apache Web Server`'s status is `Running` for this project to run.
-- Open your browswer and enter `localhost` to open XAMPP's default homepage.
-    -  The content of `localhost` is presented inside `htdocs` folder under `XAMPP` folder.
-- Open your terminal and clone this project by entering the following line in your terminal:
-    - `git clone https://github.com/JIAYI615/SOEN341-team-project.git`
-- Open the cloned folder and open `SOEN341-team-project` folder and copy its contents into `htdocs` folder inside `XAMPP` folder.
 
-## Version
-v.1.0
+  - Pull the project from github to your IDE's terminal with the following command
+      >git clone LINK_OF_GITHUB_REPO
+  - Make sure to install the react script reader 
+      >npm install react-scripts
+  - To run the project, use the following command in your terminal: 
+      >npm start
+
