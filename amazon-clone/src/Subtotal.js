@@ -16,7 +16,7 @@ function Subtotal() {
                         {/* This is the part being rendered onto the screen, what we see */}
                         <p>
                             Subtotal({basket.length} items):
-                            <strong>0</strong>
+                            <strong>{value}</strong>
                         </p>
                         <small className="subtotal__gift">
                             <input type="checkbox" />This order contains a gift
@@ -26,7 +26,7 @@ function Subtotal() {
 
                 // These are parameters to format the way the subtotal is presented on the page
                 decimalScale={2}    //2 decimal places to the left in the subtotal
-                value={getBasketTotal[basket]} // adding the products in the cart, ROUND OR SQUARE BRACKET
+                value={getBasketTotal(basket)} // adding the products in the cart, ROUND OR SQUARE BRACKET
                 displayType={"text"}
                 thousandSeparator={true}
                 prefix={"$"}
