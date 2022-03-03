@@ -10,11 +10,11 @@ function Checkout() {
 
           <div>
             <h2 className="checkout__title">Your Cart</h2>
-            {/* CartItem */}
-            {/* CartItem */}
-            {/* CartItem */}
-            {/* CartItem */}
-            {/* CartItem */}
+            {/* CheckoutProduct */}
+            {/* CheckoutProduct */}
+            {/* CheckoutProduct */}
+            {/* CheckoutProduct */}
+            {/* CheckoutProduct */}
           </div>
       </div> 
 
