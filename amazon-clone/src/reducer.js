@@ -1,5 +1,6 @@
 export const initialState = {
     basket: [],
+    user: null 
 };
 
 // state: the state of the application
@@ -10,10 +11,16 @@ const reducer = (state, action) => {
             return {
                 ...state, //Return original state of the cart
                 basket: [...state.basket, action.item], //Current state of basket, the action that is going to be done
-            };
+            }
+        case "SET_USER":
+            return {
+                ...state,
+                user: action.user
+            }
         default:
             return state;
-    }
+    }   
+        
 };
 
 export default reducer;
