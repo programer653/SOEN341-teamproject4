@@ -13,9 +13,10 @@ export default function NavigationBar() {
                 <a href="#">Best Sellers</a>
                 <a href="#">New Releases</a>
                 <a href="#">Deals of the Day</a>
+                <a href="#">Filtering Products</a>
                 <hr></hr>
                 <a href="#"></a>
-                <a href="#">Link 5</a>
+                <a href="#"></a>
                 <a href="#">Link 6</a>
             </div>
         </div> 
@@ -26,6 +27,7 @@ export default function NavigationBar() {
         <a href="#home_supplies">Home Supplies</a>
         <a href="#electronics">Electronics</a>
         <a href="#deals_of_the_day">Deals of the Day</a>
+        <a href="#filtering_product">Filtering Products</a>
     </div>
   )
 }

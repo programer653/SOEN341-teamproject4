@@ -17,7 +17,7 @@
 
 .product__rating {
     display: flex; 
-    /* diusplay flex is going to be dropping the stars in the row */
+    /* display flex is going to be dropping the stars in the row */
 }
 
 
