@@ -23,7 +23,7 @@ function Header() {
       {/* This will direct the user to the home page when the logo is clicked */}
       <Link to="/">
         <img className = "header__logo"
-          src = "https://logodix.com/logo/595167.png" 
+          src = "https://fontmeme.com/permalink/220303/6b84738cdb21cd136e6d897b78c23768.png"
           />
       </Link>
 
@@ -65,13 +65,11 @@ function Header() {
                 </Link>
 
             </div>
-            
-
+          
+          
         </div>
-
-
-
     </div>
+ 
   )
 }
 
