@@ -1,7 +1,7 @@
 # SOEN341-team-project
 [![Generic badge](https://img.shields.io/badge/SOEN341-Project-<BLUE>.svg)](https://shields.io/)
 
-[![Generic badge](https://img.shields.io/badge/VERSION-Sprint2-<BLUE>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/VERSION-Sprint3-<BLUE>.svg)](https://shields.io/)
 
 
 ## :bulb:Objective
@@ -64,7 +64,7 @@ _<h3>Back-end:</h3>_
 The following are the instructions of how to run this project:
 
   - Pull the project from github to your IDE's terminal with the following command
-      >git clone LINK_OF_GITHUB_REPO
+      >git clone https://github.com/programer653/SOEN341-teamproject4.git
   - Make sure to install the react script reader 
       >npm install react-scripts
   - To run the project, use the following command in your terminal: 
