@@ -1,19 +1,19 @@
 import React from "react";
 import "./CheckoutProduct.css";
 import { useStateValue } from "./StateProvider";
+// import "./reducer.js";
 
 function CheckoutProduct({id, image, title, price, rating}) {
     
-    const [{basket}, dispath] = useStateValue();
+    const [{basket}, dispatch] = useStateValue();
 
 
+    // Function to delete an exsisting item from the cart
     const removeFromBasket = () => {
-        // this is going to be remove the item fro the basket 
-        dispatchEvent({
+        dispatch({
             type : 'REMOVE_FROM_BASKET', 
             id: id,
         })
-
     }
     
     
@@ -21,7 +21,7 @@ function CheckoutProduct({id, image, title, price, rating}) {
         <div className="checkoutProduct">
 
             {/* contains only the image of the product */}
-            <img className="checkoutProduct__image" src={image} alt="" />
+            <img className="checkoutProduct__image" src={image}/>
 
             {/* contains every other information of the product - title, price, rating, 'Remove' button */}
             <div className="checkoutProduct__info">
@@ -35,6 +35,8 @@ function CheckoutProduct({id, image, title, price, rating}) {
                         <p>*</p>
                     ))}
                 </div>
+                
+                {/* When the 'Remove from Cart' button is clicked, the item will be removed*/}
                 <button onClick = {removeFromBasket}>Remove from Cart</button>
             </div>
         </div>
