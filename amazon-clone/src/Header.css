@@ -57,10 +57,12 @@
 }
 
 .header__optionLineOne {
+    font: oblique;
     font-size: 10px;
 }
 
 .header__optionLineTwo {
+    font: oblique;
     font-size: 13px;
     font-weight: 800;
 }

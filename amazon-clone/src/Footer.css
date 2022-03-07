@@ -1,10 +1,47 @@
 
+
 .footer {
-    height: 150px;
+    height: 60px;
     display: flex;
     align-items: center;
-    background-color: rgb(171, 174, 204);
+    background-color: rgb(218, 189, 219);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 100;    
+
 }
+
+.footer-separator {
+    flex-grow: 1;
+    border: none;
+    height: 1px;
+    background-color: rgb(155, 0, 226);
+    width: 110%;
+}
+
+.footer-bottom {
+    width: 960px;
+    margin: 0 auto;
+    background-color: lavenderblush;
+}
+
+.footer-left{
+    float: left;
+    width: 33.33%;
+
+}
+
+.footer-middle{
+    float: left;
+    width: 33.33%;
+}
+
+.footer-right{
+    float: left;
+    width: 33.33%;
+
+}
+
+
+
+/* use flex grid for the  */
