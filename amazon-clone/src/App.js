@@ -7,10 +7,22 @@ import Checkout from "./Checkout";
 import NavigationBar from "./NavigationBar";
 import ProductDetails from "./ProductDetails";
 import Footer from './Footer'
+// import { useState } from "react";
+// import firebase from "./firebase";
 
 function App() {
+
+    // const [pants, setPants] = useState([]);
+    // const ref = firebase.firestore().collection("Pants")
+
+    // console.log(ref);
+
+
+
     return (
 
+ 
+        
         // wrapping everything with a router --> allow to have pages
         <Router >
             <div className = "App" >
@@ -19,6 +31,19 @@ function App() {
                     <NavigationBar/>
                     {/* This is where we will have the banner, which will contain a few navigation fields */}
                 
+                    {/* <div>
+                        <h1>Pants</h1>
+                        {pants.map((pant) => (
+                            <div key={pant.id}>
+                                <h2>{pant.title}</h2>
+                                <p>{pant.price}</p>
+                            </div>
+
+                         ))}
+                    </div>                 */}
+
+
+
                     { /* THIS IS WHERE THE <SWITCH></SWITCH> SHOULD BE PLACED FOR CASES */ } { /* Switch --> Routes in the newer version of React */ } 
                     <Switch >
 
@@ -29,8 +54,9 @@ function App() {
 
 
                     <Route path = "/filtering-product" >
-                        <filtering-product />
+                        <filteringProduct />
                     </Route>
+
 
 
                     { /* page2-- > the cart page */} 
