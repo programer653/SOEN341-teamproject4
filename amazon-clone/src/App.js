@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Checkout from "./Checkout";
 import NavigationBar from "./NavigationBar";
 import ProductDetails from "./ProductDetails";
-
+import Footer from './Footer';
 
 
 function App() {
@@ -28,6 +28,13 @@ function App() {
             <Route path = "/Checkout" >
                 <Checkout/>
             </Route> 
+
+
+            <Route path = "/filtering-product" >
+                <filtering-product />
+            </Route>
+
+
             { /* page2-- > the cart page */} 
             {/*page3-- > filtering page*/} 
             { /* page4-- > the promotion page*/} 
@@ -41,7 +48,12 @@ function App() {
             <Home/>
             </Route> 
             </Switch > 
+
+
+            <Footer /> 
+
             </div> 
+
         </Router>
     );
 }
