@@ -53,10 +53,9 @@ function App() {
                     </Route> 
 
 
-                    <Route path = "/filtering-product" >
+                    <Route path = "/filteringProduct" >
                         <filteringProduct />
                     </Route>
-
 
 
                     { /* page2-- > the cart page */} 
@@ -67,6 +66,8 @@ function App() {
                     <Route path = "/ProductDetails">
                         <ProductDetails/>
                     </Route>
+
+
                     { /* pageX --> the default page, home page */ } { /* this is the default route */ }
                     <Route path = "/" >
                     <Home/>

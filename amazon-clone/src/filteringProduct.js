@@ -4,7 +4,11 @@ import './filteringProduct.css'
 function filteringProduct() {
   return (
     <div>
-        <h1>FILTERING PRODUCTS</h1>
+        <br />
+        <br />
+        <br />
+        <br />
+
 
     </div>
   )

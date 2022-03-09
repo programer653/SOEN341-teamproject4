@@ -3,15 +3,15 @@ import './aboutUs.css'
 
 function aboutUs() {
   return (
-    <div>
-        <Header />
-        <h1>about us</h1>
+    <div className = "aboutUs">
+        <div className= "aboutUs_container">
+            <div className= "aboutUs_backgroundImage">
+                <img className = "backgroundImage1" src = "https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+            </div>
+        </div>
 
-
-
-        <Footer />
     </div>
   )
 }
 
-export default aboutUs
+export default aboutUs;

@@ -1,0 +1,20 @@
+.aboutUs {
+    display: flex; 
+    overflow-Y:hidden;
+}
+
+
+
+
+
+.backgroundImage1{
+    position:absolute;
+    width:100%;
+    margin-top: -1200px;;
+    display:flex;
+    flex-direction:row;
+    /* the z index indicates that this is going to be the background, behind everything */
+    z-index: -2;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0)); 
+
+}
