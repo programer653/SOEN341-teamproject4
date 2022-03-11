@@ -6,6 +6,7 @@
 
 import React from 'react';
 import './Footer.css';
+import {Link} from "react-router-dom";
 
 function Footer() {
   return (
@@ -27,7 +28,10 @@ function Footer() {
 
             <section className='footer-left'>
                 <section>
-                    <a href = '/aboutUs'>About Us </a>
+                    <Link to = "/aboutUs">
+                        <a href = '/aboutUs'>About Us </a>
+                    </Link>
+                
                 </section>
             </section>
 

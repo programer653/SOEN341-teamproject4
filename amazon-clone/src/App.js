@@ -68,6 +68,11 @@ function App() {
                     </Route>
 
 
+
+                    <Route path = "/aboutUs">
+                        <aboutUs/>
+                    </Route>
+
                     { /* pageX --> the default page, home page */ } { /* this is the default route */ }
                     <Route path = "/" >
                     <Home/>
