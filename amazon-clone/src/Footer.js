@@ -28,8 +28,8 @@ function Footer() {
 
             <section className='footer-left'>
                 <section>
-                    <Link to = "/aboutUs">
-                        <a href = '/aboutUs'>About Us </a>
+                    <Link to = "/about-us">
+                        <a href = '/about-us'>About Us </a>
                     </Link>
                 
                 </section>

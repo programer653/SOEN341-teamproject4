@@ -7,6 +7,7 @@ import Checkout from "./Checkout";
 import NavigationBar from "./NavigationBar";
 import ProductDetails from "./ProductDetails";
 import Footer from './Footer'
+import AboutUs from "./AboutUs";
 // import { useState } from "react";
 // import firebase from "./firebase";
 
@@ -40,6 +41,10 @@ function App() {
 
                         <Route path = "/ProductDetails">
                             <ProductDetails/>
+                        </Route>
+
+                        <Route path = "/about-us" >
+                            <AboutUs />
                         </Route>
 
 

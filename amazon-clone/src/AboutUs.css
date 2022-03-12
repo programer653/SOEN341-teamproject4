@@ -1,0 +1,114 @@
+.initial {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+  }
+
+
+
+.columns{
+
+}
+#team{
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: 7%;
+}
+#team img{
+  width:  200px;
+  height: 200px;
+  margin-right: 10%;
+}
+#teamTitle{
+  font-size: 24px;
+  font-weight: 300;
+  color: white;
+}
+#teamPos{
+  font-size: 16px;
+  font-weight: 100;
+  color: white;
+}
+#pageTitle{
+  display: none;
+}
+#pageTitle1{
+  display: block;
+}
+#pageTitle p{
+  color: white;
+  font-size: 48px;
+  font-weight: 100;
+}
+#pageTitle1 p{
+  color: white;
+  font-size: 48px;
+  font-weight: 100;
+}
+#pageData{
+  color: white;
+  font-size: 16px;
+  font-weight: 100;
+  width: 90%;
+  margin: 0 auto;
+}
+#pageData p{
+  text-align: justify;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+#middleColumn{
+  border-right: 0px;
+}
+#rightColumn{
+border-left: 1px solid white;
+border-right: 0px;
+}
+#imgRight{
+    transform: rotateY(180deg);
+    margin-left: 10%;
+}
+.fadeOut{
+    background-color: black;
+    border-right: 1px solid lightblue;
+    width:  33%;
+    height: 100%;
+    opacity:0;
+
+}
+.fadeIn{
+    background-color: rgb(0, 0, 0);
+    border-right: 1px solid lightblue;
+    width:  33%;
+    height: 100%;
+    opacity:1;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    transition-delay: 0.1s;
+
+}
+@media only screen and (max-width: 600px) {
+.App {
+  display: flex;
+  flex-direction: column;
+}
+.fadeOut{
+  width: 100%;
+
+}
+.fadeIn{
+    width:  100%;
+}
+#pageTitle{
+  display: block;
+}
+#pageTitle1{
+  display: none;
+}
+}
