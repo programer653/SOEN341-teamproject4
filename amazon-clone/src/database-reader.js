@@ -13,23 +13,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // //this is going to be reading the data in the database
 // document.addEventListener("DOMContentLoaded", event => {
 //     const app = firebase.app();
@@ -61,7 +44,7 @@
 
 // })
 
-// const productsRef = db.collection('pants');
+// const productsRef = db.collection('Products');
 
 // const query  = productsRef.where('price', '>=', 300)
 
