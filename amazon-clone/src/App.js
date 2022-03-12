@@ -8,6 +8,8 @@ import NavigationBar from "./NavigationBar";
 import ProductDetails from "./ProductDetails";
 import Footer from './Footer'
 import AboutUs from "./AboutUs";
+import filteringProduct from "./filteringProduct";
+
 // import { useState } from "react";
 // import firebase from "./firebase";
 
@@ -35,9 +37,7 @@ function App() {
                             <Checkout/>
                         </Route> 
 
-                        <Route path = "/filteringProduct" >
-                            <filteringProduct />
-                        </Route>
+
 
                         <Route path = "/ProductDetails">
                             <ProductDetails/>
@@ -45,6 +45,10 @@ function App() {
 
                         <Route path = "/about-us" >
                             <AboutUs />
+                        </Route>
+
+                        <Route path = "/filtering-product" >
+                            <filteringProduct />
                         </Route>
 
 

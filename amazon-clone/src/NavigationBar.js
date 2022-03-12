@@ -1,5 +1,7 @@
 import React from 'react'
 import "./NavigationBar.css"
+import {Link} from "react-router-dom";
+
 
 export default function NavigationBar() {
   return (
@@ -27,7 +29,14 @@ export default function NavigationBar() {
         <a href="#home_supplies">Home Supplies</a>
         <a href="#electronics">Electronics</a>
         <a href="#deals_of_the_day">Deals of the Day</a>
-        <a href="/filtering-product">Filtering Products</a>
+
+
+
+        <Link to = "/filtering-product">
+           <a href = '/filtering-product'>Filtering Products</a>
+        </Link>
+        
+        {/* <a href="/filtering-product">Filtering Products</a> */}
     </div>
   )
 }

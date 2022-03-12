@@ -14,4 +14,4 @@ function filteringProduct() {
   )
 }
 
-export default filteringProduct
+export default filteringProduct;
