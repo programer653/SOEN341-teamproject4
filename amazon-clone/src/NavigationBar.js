@@ -28,8 +28,10 @@ export default function NavigationBar() {
         <a href="#pet_supplies">Pet Supplies</a>
         <a href="#home_supplies">Home Supplies</a>
         <a href="#electronics">Electronics</a>
-        <a href="#deals_of_the_day">Deals of the Day</a>
 
+        <Link to = "/promotions">
+           <a href = '/promotions'>Deals of the Day</a>
+        </Link>
 
 
         <Link to = "/filtering-product">

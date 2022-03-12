@@ -1,0 +1,17 @@
+.promotion{
+    background-color: rgb(214, 200, 226);
+}
+
+#pageTitle{
+    display: none;
+  }
+
+#pageTitle p{
+    color: purple;
+    font-size: 48px;
+    font-weight: 100;
+  }
+
+ #pageTitle{
+    display: block;
+  }

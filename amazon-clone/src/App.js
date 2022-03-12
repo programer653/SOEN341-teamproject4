@@ -9,6 +9,8 @@ import ProductDetails from "./ProductDetails";
 import Footer from './Footer'
 import AboutUs from "./AboutUs";
 import filteringProduct from "./filteringProduct";
+import Promotion from "./Promotion";
+
 
 // import { useState } from "react";
 // import firebase from "./firebase";
@@ -49,6 +51,10 @@ function App() {
 
                         <Route path = "/filtering-product" >
                             <filteringProduct />
+                        </Route>
+
+                        <Route path = "/promotions">
+                            <Promotion />
                         </Route>
 
 
