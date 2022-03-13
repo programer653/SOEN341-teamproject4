@@ -2,10 +2,11 @@ import React from "react";
 import './App.css';
 import Header from './Header';
 import Home from './Home';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as BrowserRouter, Switch, Route } from "react-router-dom";
 import Checkout from "./Checkout";
 import NavigationBar from "./NavigationBar";
 import ProductDetails from "./ProductDetails";
+import Admin from "./Admin";
 
 
 
@@ -13,7 +14,7 @@ function App() {
     return (
 
         // wrapping everything with a router --> allow to have pages
-        <Router >
+        <BrowserRouter >
             <div className = "App" >
             { /* rendering the header, because it is always going to be in all the pages */ } 
             <Header/>
@@ -33,16 +34,23 @@ function App() {
             { /* page4-- > the promotion page*/} 
             {/*page5-- > login page */}
             {/* page6-- > product detail page */}
-            <Route path = "/ProductDetails">
+           
+            <Route path = "./ProductDetails">
                 <ProductDetails/>
             </Route>
             { /* pageX --> the default page, home page */ } { /* this is the default route */ }
-            <Route path = "/" >
-            <Home/>
+            <Route path="/Admin" component={Admin}>
+                    
+            </Route>
+
+            <Route path = "/Home" >
+                <Home/>
             </Route> 
-            </Switch > 
+                
+            </Switch >
+
             </div> 
-        </Router>
+        </BrowserRouter>
     );
 }
 

@@ -26,7 +26,7 @@ function ProductDetails({id, title, image, description, price, rating}) {
 
     <div className="productDetails">
         
-        <p className="productDetails__title">{title}</p>
+        {/* <p className="productDetails__title">{title}</p>
         <img className="productDetails__image">{image}</img>
         <p className="productDetails__description"></p>
         <p className="productDetails__price">{price}</p>
@@ -36,7 +36,10 @@ function ProductDetails({id, title, image, description, price, rating}) {
         <div className="productDetails">
 
         </div>
-        <button onClick={addToBasket}>Add to Cart </button>
+
+        <button onClick={addToBasket}>Add to Cart </button> */}
+
+        This is product details
 
     </div>
 
