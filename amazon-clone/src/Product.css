@@ -10,8 +10,9 @@
     max-height: 400px;
     min-width: 100px;
 
-    background-color: white;
-    z-index: 1;
+    background-color: rgb(228, 220, 230);
+    z-index: 0; 
+    /* z-index is going to be 0 so that we could see dropdown menu of nav bar */
 }
 
 
