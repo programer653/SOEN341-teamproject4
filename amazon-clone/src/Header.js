@@ -5,6 +5,7 @@ the header of the website in this file
 import React from 'react'
 import './Header.css'
 
+
 // these imports are going to be taken from material-ui.com
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
@@ -13,6 +14,7 @@ import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import {Link} from "react-router-dom";
 
 import {useStateValue} from "./StateProvider";
+import AnimationPage from './AnimationPage';
 
 function Header() {
   const[{basket}, dispatch] = useStateValue();
@@ -33,7 +35,7 @@ function Header() {
 
             {/* logo */}
             <SearchIcon className = "header__searchIcon" />
-
+            
             <div className = "header__nav">
 
                 <div className = "header__option">

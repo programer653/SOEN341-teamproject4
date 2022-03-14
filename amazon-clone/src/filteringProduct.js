@@ -1,6 +1,5 @@
 import React from 'react'
 import './filteringProduct.css'
-
 function filteringProduct() {
   return (
     <div>
@@ -8,9 +7,8 @@ function filteringProduct() {
         <br />
         <br />
         <br />
-
-
     </div>
+    
   )
 }
 

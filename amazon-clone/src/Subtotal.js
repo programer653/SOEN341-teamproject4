@@ -4,6 +4,7 @@ import CurrencyFormat from "react-currency-format";
 import ShoppingBasket from "@material-ui/icons/ShoppingBasket";
 import {useStateValue} from "./StateProvider";
 import {getBasketTotal} from "./reducer";
+import AnimationPage from "./AnimationPage";
 
 function Subtotal() {
 
@@ -31,8 +32,10 @@ function Subtotal() {
                 thousandSeparator={true}
                 prefix={"$"}
             />
-
-            <button>Proceed to Checkout</button>
+            
+            <AnimationPage>
+                <button>Proceed to Checkout</button>
+            </AnimationPage>
 
         </div>
     );

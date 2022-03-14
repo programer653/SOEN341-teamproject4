@@ -2,6 +2,7 @@ import React from 'react'
 import "./Product.css";
 import {useStateValue} from "./StateProvider";
 import {Link} from "react-router-dom";
+import AnimationPage from './AnimationPage';
 
 // to promote reusability, we are going to be making functions that we could call when needed
 function Product({id, title, price, rating, image }) {
@@ -41,7 +42,9 @@ function Product({id, title, price, rating, image }) {
             </div>
         </div>
         <img src = {image} alt = ""/>
-        <button onClick={addToBasket}>Add to Cart </button> 
+        <AnimationPage>
+            <button onClick={addToBasket}>Add to Cart </button> 
+        </AnimationPage>
     </div>
     )
 }

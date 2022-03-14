@@ -18,8 +18,6 @@ import Promotion from "./Promotion";
 function App() {
 
     return (
-
-
         
         // wrapping everything with a router --> allow to have pages
         <Router >

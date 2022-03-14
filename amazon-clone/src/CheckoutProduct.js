@@ -1,4 +1,5 @@
 import React from "react";
+import AnimationPage from "./AnimationPage";
 import "./CheckoutProduct.css";
 import { useStateValue } from "./StateProvider";
 // import "./reducer.js";
@@ -37,7 +38,10 @@ function CheckoutProduct({id, image, title, price, rating}) {
                 </div>
                 
                 {/* When the 'Remove from Cart' button is clicked, the item will be removed*/}
-                <button onClick = {removeFromBasket}>Remove from Cart</button>
+                
+                <AnimationPage>
+                    <button onClick = {removeFromBasket}>Remove from Cart</button>
+                </AnimationPage>
             </div>
         </div>
     )
