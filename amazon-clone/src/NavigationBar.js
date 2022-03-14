@@ -8,9 +8,9 @@ export default function NavigationBar() {
     <div class="navigationBar">
 
         <div class="dropdownMenu">
-            <button class="dropbutton"> <strong>Expand to Find More↓</strong><i class="fa fa-caret-down"></i></button>
+            <button class="dropbutton"> <strong>Dropdown Menu↓</strong><i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
-                <h3>Trending Today!</h3>
+                <h3>Category Name</h3>
                 <hr></hr>
                 <a href="#">Best Sellers</a>
                 <a href="#">New Releases</a>

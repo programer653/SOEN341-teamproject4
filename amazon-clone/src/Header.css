@@ -2,8 +2,6 @@
 - div; multiple lines of code 
 - span; for one line of code, apply styling for inline content 
  */
-
-
 /* this is for the header as a whole */
 
 .header {
@@ -53,7 +51,7 @@
 .header__searchIcon {
     padding: 5px;
     height: 22px !important;
-    background-color: #cd9042;
+    background-color: #9e81a3;
 }
 
 .header__optionLineOne {
