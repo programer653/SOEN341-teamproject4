@@ -34,6 +34,7 @@ const moveDot = index => {
   return (
       
     <div className="container-slider">
+        <h1>FEATURED PRODUCTS</h1>
     {dataSlider.map((obj, index) => {
         return (
                 <div
