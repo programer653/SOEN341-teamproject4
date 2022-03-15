@@ -1,5 +1,6 @@
 export const initialState = {
     basket: [],
+    user: null 
 };
 
 //maps into the basket, iterate in the basket and tally up in the total
@@ -18,7 +19,15 @@ const reducer = (state, action) => {
                 ...state, //Return original state of the cart
                 // push the item into the basket
                 basket: [...state.basket, action.item], //Current state of basket, the action that is going to be done
-            };
+
+             }
+        case "SET_USER":
+            return {
+                ...state,
+                user: action.user
+            }
+
+            
         case "REMOVE_FROM_BASKET":
             
             // we want to make sure that all of the items from same id doesnt get removed
@@ -46,7 +55,8 @@ const reducer = (state, action) => {
         
         default:
             return state;
-    }
+    }   
+        
 };
 
 export default reducer;
