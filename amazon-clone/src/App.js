@@ -4,9 +4,14 @@ import Header from './Header';
 import Home from './Home';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Checkout from "./Checkout";
+
 import Login from "./Login";
 import {auth} from "./firebase";
 import { useStateValue } from "./StateProvider";
+import NavigationBar from "./NavigationBar";
+import ProductDetails from "./ProductDetails";
+
+
 
 
 function App() {
@@ -42,6 +47,13 @@ function App() {
         <Router >
             <div className = "App" >
             { /* rendering the header, because it is always going to be in all the pages */ } 
+LoginBranch
+
+            <Header/>
+            <NavigationBar/>
+
+            {/* This is where we will have the banner, which will contain a few navigation fields */}
+        
             { /* THIS IS WHERE THE <SWITCH></SWITCH> SHOULD BE PLACED FOR CASES */ } { /* Switch --> Routes in the newer version of React */ } 
             <Switch >
                 <Route path= "/login">
@@ -56,6 +68,10 @@ function App() {
             {/*page3-- > filtering page*/} 
             { /* page4-- > the promotion page*/} 
             {/*page5-- > login page */}
+            {/* page6-- > product detail page */}
+            <Route path = "/ProductDetails">
+                <ProductDetails/>
+            </Route>
             { /* pageX --> the default page, home page */ } { /* this is the default route */ }
             <Route path = "/" >
                 <Header />

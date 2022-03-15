@@ -14,6 +14,7 @@ import {Link} from "react-router-dom";
 import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
 
+
 function header() {
   const [{basket, user}, dispatch] = useStateValue();
   
@@ -24,13 +25,14 @@ function header() {
       // when signed in, sign in sentence is replaced by sign out in header
     }
   }
+
   return (
     <div className = "header">
 
       {/* This will direct the user to the home page when the logo is clicked */}
       <Link to="/">
         <img className = "header__logo"
-          src = "https://logodix.com/logo/595167.png" 
+          src = "https://fontmeme.com/permalink/220303/6b84738cdb21cd136e6d897b78c23768.png"
           />
       </Link>
 
@@ -70,19 +72,17 @@ function header() {
                   <div className="header__optionBasket">
                       <ShoppingBasketIcon />
                       {/* this is going to be having two classNames, and there is a space in between */}
-                      <span className = "header__optionLineTwo header__basketCount">0</span>
+                      <span className = "header__optionLineTwo header__basketCount">{basket?.length}</span>
                   </div>
                 </Link>
 
             </div>
-            
-
+          
+          
         </div>
-
-
-
     </div>
+ 
   )
 }
 
-export default header
+export default Header
