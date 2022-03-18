@@ -1,8 +1,13 @@
 import React from 'react'
-import './filteringProduct.css'
+import './filteringProduct.css';
+
 function filteringProduct() {
   return (
-    <div>
+    <div className='filter_container'>
+        
+        <title>Filter by:</title>
+        
+        
         <br />
         <br />
         <br />
