@@ -7,8 +7,9 @@ import Checkout from "./Checkout";
 import NavigationBar from "./NavigationBar";
 import ProductDetails from "./ProductDetails";
 import Admin from "./Admin";
-
-
+import {useState} from "react";
+import Payment from "./Payment";
+import DisplayProduct from "./DisplayProduct";
 
 function App() {
     return (
@@ -29,12 +30,19 @@ function App() {
             <Route path = "/Checkout" >
                 <Checkout/>
             </Route> 
+            <Route path = "/payment" >
+                <Payment />
+            </Route> 
             { /* page2-- > the cart page */} 
             {/*page3-- > filtering page*/} 
             { /* page4-- > the promotion page*/} 
             {/*page5-- > login page */}
             {/* page6-- > product detail page */}
-           
+
+            <Route path = "./DisplayProduct">
+                <DisplayProduct />
+            </Route>
+
             <Route path = "./ProductDetails">
                 <ProductDetails/>
             </Route>
