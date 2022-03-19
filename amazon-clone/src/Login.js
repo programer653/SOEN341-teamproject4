@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Login.css'
 import { Link, useHistory } from "react-router-dom";
 // import { useState } from 'react';
-import {auth} from "./firebase";
+import {auth} from "./Config/Config";
 
 function Login() {
     const history = useHistory();
@@ -22,7 +22,7 @@ function Login() {
            .catch(error => alert(error.message))
 
 
-    } //function created to signin, firbase login
+    } //function created to signin, firebase login
 
 
     const signUp = e =>

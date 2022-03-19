@@ -14,15 +14,18 @@ import {Link} from "react-router-dom";
 import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
 
+import {useStateValue} from "./StateProvider";
+import {auth} from "./Config/Config";
 
-function header() {
-  const [{basket, user}, dispatch] = useStateValue();
-  
-  const handleAuthentification = () => {
-    if (user) {
+function Header() {
+  const[{basket, user}, dispatch] = useStateValue();
+
+  const handleAuthentification = () =>
+  {
+    if(user) {
       auth.signOut();
 
-      // when signed in, sign in sentence is replaced by sign out in header
+      //when signed in, sign in sentence is replaced by sign out in header
     }
   }
 
@@ -43,17 +46,18 @@ function header() {
             {/* logo */}
             <SearchIcon className = "header__searchIcon" />
 
-            <div className = "header__nav"> 
-              <Link to={!user && '/login'}> 
-              {/* redirected to the login page only if their is no user signed in */}
-                 <div onClick={handleAuthentification} className = "header__option">
+            <div className = "header__nav">
+              <Link to={!user && '/login'}>
+                {/* redirected to the login page only if there is no user sign in */}
+              
+
+                <div onClick={handleAuthentification} className = "header__option">
                   
-                  <span className = "header__optionLineOne">Hello, name Person!</span>
-                  <span className = "header__optionLineTwo">{ user ? 'Sign Out' : 'Sign In' }</span>
+                  <span className = "header__optionLineOne">Hello, namePerson!</span>
+                  <span className = "header__optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
 
                 </div>
-                </Link>
-               
+              </Link>
 
                 <div className = "header__option">
                   <span className = "header__optionOne">Returns</span>
@@ -85,4 +89,4 @@ function header() {
   )
 }
 
-export default Header
+export default Header;

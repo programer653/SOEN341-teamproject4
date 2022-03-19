@@ -12,9 +12,8 @@ function Home() {
        
             <div className="homeContainer">
                 <div className = "home__row">
-                 <Product />
                     <Product />
-                    {/* product component */}
+                    <Product />
 
                 </div>
 
@@ -24,15 +23,13 @@ function Home() {
                     <Product />
                     <Product />
 
-                    {/* product component */}
-                    {/* product component */}
-                    {/* product component */}
-
                 </div>
 
                 <div className = "home__row">
                     <Product />
-                    {/* product component */}
+                </div>
+                <div className="home__row">
+                    Browse
                 </div>
             </div>
             

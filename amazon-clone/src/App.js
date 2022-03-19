@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import './App.css';
 import Header from './Header';
 import Home from './Home';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as BrowserRouter, Switch, Route } from "react-router-dom";
 import Checkout from "./Checkout";
 
 import Login from "./Login";
@@ -10,8 +10,13 @@ import {auth} from "./firebase";
 import { useStateValue } from "./StateProvider";
 import NavigationBar from "./NavigationBar";
 import ProductDetails from "./ProductDetails";
-
-
+import Admin from "./Admin";
+import {useState} from "react";
+import Payment from "./Payment";
+import DisplayProduct from "./DisplayProduct";
+import {useStateValue} from "./StateProvider";
+import Login from "./Login";
+import {auth} from "./Config/Config";
 
 
 function App() {
@@ -44,7 +49,7 @@ function App() {
     return (
 
         // wrapping everything with a router --> allow to have pages
-        <Router >
+        <BrowserRouter >
             <div className = "App" >
             { /* rendering the header, because it is always going to be in all the pages */ } 
 LoginBranch
@@ -64,22 +69,38 @@ LoginBranch
                 <Header/>
                 <Checkout/>
             </Route> 
+            <Route path = "/Payment" >
+                <Payment />
+            </Route> 
             { /* page2-- > the cart page */} 
             {/*page3-- > filtering page*/} 
             { /* page4-- > the promotion page*/} 
             {/*page5-- > login page */}
+            <Route path ="/Login">
+                <Login />
+            </Route>
             {/* page6-- > product detail page */}
-            <Route path = "/ProductDetails">
+
+            <Route path = "./DisplayProduct">
+                <DisplayProduct />
+            </Route>
+
+            <Route path = "./ProductDetails">
                 <ProductDetails/>
             </Route>
             { /* pageX --> the default page, home page */ } { /* this is the default route */ }
-            <Route path = "/" >
-                <Header />
-            <Home/>
+            <Route path="/Admin" component={Admin}>
+                    
+            </Route>
+
+            <Route path = "/Home" >
+                <Home/>
             </Route> 
-            </Switch > 
+                
+            </Switch >
+
             </div> 
-        </Router>
+        </BrowserRouter>
     );
 }
 
