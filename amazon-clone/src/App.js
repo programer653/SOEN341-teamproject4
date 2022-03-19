@@ -4,6 +4,10 @@ import Header from './Header';
 import Home from './Home';
 import { BrowserRouter as BrowserRouter, Switch, Route } from "react-router-dom";
 import Checkout from "./Checkout";
+
+import Login from "./Login";
+import {auth} from "./firebase";
+import { useStateValue } from "./StateProvider";
 import NavigationBar from "./NavigationBar";
 import ProductDetails from "./ProductDetails";
 import Admin from "./Admin";
@@ -13,6 +17,7 @@ import DisplayProduct from "./DisplayProduct";
 import {useStateValue} from "./StateProvider";
 import Login from "./Login";
 import {auth} from "./Config/Config";
+
 
 function App() {
     const [{}, dispatch] = useStateValue();
@@ -47,6 +52,8 @@ function App() {
         <BrowserRouter >
             <div className = "App" >
             { /* rendering the header, because it is always going to be in all the pages */ } 
+LoginBranch
+
             <Header/>
             <NavigationBar/>
 
@@ -54,9 +61,12 @@ function App() {
         
             { /* THIS IS WHERE THE <SWITCH></SWITCH> SHOULD BE PLACED FOR CASES */ } { /* Switch --> Routes in the newer version of React */ } 
             <Switch >
-
+                <Route path= "/login">
+                    <Login/>
+                </Route>
             { /* page1 --> the checkout page */ } 
             <Route path = "/Checkout" >
+                <Header/>
                 <Checkout/>
             </Route> 
             <Route path = "/Payment" >

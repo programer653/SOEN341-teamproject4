@@ -1,13 +1,17 @@
 import { ListItem } from "@material-ui/core";
 import React from "react";
 import "./Checkout.css";
+
 import CheckoutProduct from "./CheckoutProduct";
 import { useStateValue } from "./StateProvider";
 import Subtotal from "./Subtotal";
 
 function Checkout() {
-//To render out the cart
-const [{basket}, dispatch] = useStateValue();
+
+  const [{user}] = useStateValue();
+  //To render out the cart
+  const [{basket}, dispatch] = useStateValue();
+
 
   return (
     <div className = "checkout">
@@ -15,6 +19,8 @@ const [{basket}, dispatch] = useStateValue();
           <img className = "checkout__ad" src = "https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg" alt=""/>
 
           <div>
+            <h3>{user.email}</h3>
+            {/* <h3>Hello, {user?.email}</h3> function isn't working, It was to add hello before the name of th user. */}
             <h2 className="checkout__title">Your Cart</h2>
             {/* this is going to be displaying the content of the backet in the checkout */}
             {basket.map(item => (
