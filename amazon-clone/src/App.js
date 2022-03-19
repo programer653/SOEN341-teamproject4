@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './App.css';
 import Header from './Header';
 import Home from './Home';
@@ -10,8 +10,37 @@ import Admin from "./Admin";
 import {useState} from "react";
 import Payment from "./Payment";
 import DisplayProduct from "./DisplayProduct";
+import {useStateValue} from "./StateProvider";
+import Login from "./Login";
+import {auth} from "./Config/Config";
 
 function App() {
+    const [{}, dispatch] = useStateValue();
+
+    useEffect(() => {
+        // will only run once when the app component loads
+
+        auth.onAuthStateChanged(authUser => {
+            console.log('The user is >>>', authUser);
+
+            if (authUser) {
+                //user logged in or w   as logged in
+                dispatch({
+                    type: 'SET_USER', //set User to the authUser
+                    user: authUser
+                })
+            } 
+            else {
+
+                //the user is logged out
+                dispatch({
+                    type: 'SET_USER', //set User to nyll value so no one is logged in
+                    user: null
+                })
+            }
+        })
+    }, [])
+
     return (
 
         // wrapping everything with a router --> allow to have pages
@@ -30,13 +59,16 @@ function App() {
             <Route path = "/Checkout" >
                 <Checkout/>
             </Route> 
-            <Route path = "/payment" >
+            <Route path = "/Payment" >
                 <Payment />
             </Route> 
             { /* page2-- > the cart page */} 
             {/*page3-- > filtering page*/} 
             { /* page4-- > the promotion page*/} 
             {/*page5-- > login page */}
+            <Route path ="/Login">
+                <Login />
+            </Route>
             {/* page6-- > product detail page */}
 
             <Route path = "./DisplayProduct">

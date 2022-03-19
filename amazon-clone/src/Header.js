@@ -13,19 +13,19 @@ import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import {Link} from "react-router-dom";
 
 import {useStateValue} from "./StateProvider";
-// import {auth} from "./firebase";
+import {auth} from "./Config/Config";
 
 function Header() {
-  const[{basket}, dispatch] = useStateValue();
+  const[{basket, user}, dispatch] = useStateValue();
 
-  // const handleAuthentification = () =>
-  // {
-  //   if(user) {
-  //     auth.signOut();
+  const handleAuthentification = () =>
+  {
+    if(user) {
+      auth.signOut();
 
-  //     //when signed in, sign in sentence is replaced by sign out in header
-  //   }
-  // }
+      //when signed in, sign in sentence is replaced by sign out in header
+    }
+  }
 
   return (
     <div className = "header">
@@ -45,17 +45,17 @@ function Header() {
             <SearchIcon className = "header__searchIcon" />
 
             <div className = "header__nav">
-              {/* <Link to={!user && '/login'}> */}
+              <Link to={!user && '/login'}>
                 {/* redirected to the login page only if there is no user sign in */}
               
 
-                <div className = "header__option">
+                <div onClick={handleAuthentification} className = "header__option">
                   
                   <span className = "header__optionLineOne">Hello, namePerson!</span>
-                  <span className = "header__optionLineTwo">Sign In</span>
+                  <span className = "header__optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
 
                 </div>
-              {/* </Link> */}
+              </Link>
 
                 <div className = "header__option">
                   <span className = "header__optionOne">Returns</span>
