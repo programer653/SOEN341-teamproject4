@@ -6,7 +6,6 @@ import { BrowserRouter as BrowserRouter, Switch, Route } from "react-router-dom"
 import Checkout from "./Checkout";
 
 import Login from "./Login";
-import {auth} from "./firebase";
 import { useStateValue } from "./StateProvider";
 import NavigationBar from "./NavigationBar";
 import ProductDetails from "./ProductDetails";
@@ -14,8 +13,6 @@ import Admin from "./Admin";
 import {useState} from "react";
 import Payment from "./Payment";
 import DisplayProduct from "./DisplayProduct";
-import {useStateValue} from "./StateProvider";
-import Login from "./Login";
 import {auth} from "./Config/Config";
 
 
@@ -52,7 +49,6 @@ function App() {
         <BrowserRouter >
             <div className = "App" >
             { /* rendering the header, because it is always going to be in all the pages */ } 
-LoginBranch
 
             <Header/>
             <NavigationBar/>
