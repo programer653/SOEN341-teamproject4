@@ -10,7 +10,6 @@ import { useStateValue } from "./StateProvider";
 import NavigationBar from "./NavigationBar";
 import ProductDetails from "./ProductDetails";
 import Admin from "./Admin";
-import {useState} from "react";
 import Payment from "./Payment";
 import DisplayProduct from "./DisplayProduct";
 import {auth} from "./Config/Config";
@@ -45,11 +44,8 @@ function App() {
 
     return (
 
-        // wrapping everything with a router --> allow to have pages
-        <BrowserRouter >
-            <div className = "App" >
-            { /* rendering the header, because it is always going to be in all the pages */ } 
-
+        <BrowserRouter>
+        <div className="App"> 
             <Header/>
             <NavigationBar/>
 
