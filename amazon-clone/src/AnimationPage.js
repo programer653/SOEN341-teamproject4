@@ -12,8 +12,6 @@ const animations = {
     exit: {opacity: 0, x: -100},
 }
 
-
-
 const AnimationPage = ({children}) => {
   return (
     <motion.div variants={animations} initial="initial" animate="animate" exit="exit">
@@ -23,3 +21,4 @@ const AnimationPage = ({children}) => {
 }
 
 export default AnimationPage;
+

@@ -10,6 +10,7 @@ import Footer from './Footer'
 import AboutUs from "./AboutUs";
 import filteringProduct from "./filteringProduct";
 import Promotion from "./Promotion";
+import FeaturedProducts from "./FeaturedProducts";
 
 
 // import { useState } from "react";
@@ -26,7 +27,6 @@ function App() {
                     <Header/>
                     <NavigationBar/>
                     {/* This is where we will have the banner, which will contain a few navigation fields */}
-
 
 
                     { /* THIS IS WHERE THE <SWITCH></SWITCH> SHOULD BE PLACED FOR CASES */ } { /* Switch --> Routes in the newer version of React */ } 
@@ -61,6 +61,7 @@ function App() {
 
                         { /* pageX --> the default page, home page */ } { /* this is the default route */ }
                         <Route path = "/" >
+                            <FeaturedProducts />
                             <Home/>
                         </Route> 
                     </Switch > 

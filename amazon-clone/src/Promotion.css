@@ -1,5 +1,6 @@
 .promotion{
-    background-color: rgb(214, 200, 226);
+  background:linear-gradient(pink, rgb(207, 147, 207));
+  background-color: rgb(214, 200, 226);
 }
 
 #pageTitle{
@@ -29,5 +30,6 @@
     position:relative;
     align-items:center;
     justify-content: center;
+    background:scroll;
 
 }
