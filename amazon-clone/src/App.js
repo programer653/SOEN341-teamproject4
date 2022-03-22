@@ -37,8 +37,6 @@ function App() {
                             <Checkout/>
                         </Route> 
 
-
-
                         <Route path = "/ProductDetails">
                             <ProductDetails/>
                         </Route>

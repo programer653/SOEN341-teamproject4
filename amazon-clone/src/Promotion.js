@@ -13,13 +13,11 @@ function Promotion() {
 
     const [visible,setVisible] = useState(false);
 
-
   return (
     <div className = "promotion">
 
         <div id="pageTitle" >
             <p>Deals of the Day</p>
-
 
             <div className='promo_container'>
                 <div className='promo_row'>
@@ -27,9 +25,7 @@ function Promotion() {
                 <Product id = "1234" title = "Gucci Belt" price ={290.00} rating = {5} image = "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1580211003/406831_0YA0G_1000_001_100_0000_Light.jpg" />
                 <Product id = "1234" title = "Gucci Belt" price ={290.00} rating = {5} image = "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1580211003/406831_0YA0G_1000_001_100_0000_Light.jpg" />
 
-
                 </div>
-
 
                 <div className='promo_row'>
 
@@ -37,19 +33,7 @@ function Promotion() {
 
             </div>
 
-
-
-
-
-
-
         </div>
-
-
-
-        <br />
-        <br />
-        <br />
 
     </div>
     

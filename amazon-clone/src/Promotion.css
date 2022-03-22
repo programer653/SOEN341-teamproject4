@@ -17,7 +17,7 @@
     display: block;
   }
 
-  .promo_row {
+.promo_row {
     display: flex; 
     flex-direction:row;
     z-index: -1; 
