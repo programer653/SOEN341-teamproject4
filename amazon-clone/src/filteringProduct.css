@@ -1,46 +1,44 @@
-.filter_container {
-    background:linear-gradient(pink, rgb(207, 147, 207));
-    background-color: rgb(214, 200, 226);
-    background: linear-gradient(pink, purple);
-}
-].filter_display{
-    position:relative;
-    align-items:center;
-    justify-content: center;
-    background:scroll;
+.filtering {
+  background:linear-gradient(pink, rgb(230, 225, 231));
 }
 
-#filter_title{
+.filter-sort{
+  font: Helvetica ;
+  
+}
+
+.filter-size{
+  font: Helvetica ;
+
+}
+
+#pageTitle{
     display: none;
   }
 
-#filter_title p{
+#pageTitle p{
     color: purple;
     font-size: 48px;
     font-weight: 100;
   }
 
- #filter_title{
+ #pageTitle{
     display: block;
   }
 
-
-.filter_container_box1 {
+  .filtering_row {
     display: flex; 
     flex-direction:row;
     z-index: -1; 
     margin-top:50px;
     margin-left: 5px; 
     margin-right: 5px; 
+  }
 
-}
 
-.filter_container_box2{
-    display: flex; 
-    flex-direction:row;
-    z-index: -1; 
-    margin-top:50px;
-    margin-left: 5px; 
-    margin-right: 5px; 
-
-}
+  .filtering_container {
+    position:relative;
+    align-items:center;
+    justify-content: center;
+    background:scroll;
+  }

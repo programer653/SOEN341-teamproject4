@@ -1,66 +1,91 @@
 import React, {useEffect, useState} from 'react';
-import Product from './Product';
-import { motion } from 'framer-motion';
-import './filteringProduct.css';
-import { getDatabase, ref, onValue, child, get } from "firebase/database";
+import Product from "./Product";
+import { motion } from "framer-motion";
+import "./FilteringProduct.css";
+import { getDatabase, collection } from "firebase/database";
 
 
-function filteringProduct() {
-
-
-
+function FilteringProduct() {
+  {/*
   const db = getDatabase();
-  const allProducts = db.collection('Products');
+  const allProducts = db.collection("Products");
 
-  //initialization of all the variables needed
-  const basicQuery ={};
-  const userSelectName = {};
-  const userFilterPrice = {};
-  const userSelectPrice = {};
-  const userFilterRating = {};
-  const prodName = {}; 
-  const prodPrice ={};
-
-  //this is going to be used in the html portion
-  //use button for that 
-
-  if (userSelectPrice){
-    basicQuery = allProducts.where('itemPrice', '==', prodPrice)
-  } 
-  else if (userSelectName){
-    basicQuery = allProducts.where('itemName', '==', prodName);
-  } else if (userFilterPrice){
-    basicQuery = allProducts.orderBy("itemPrice", "asc");
-    
-  } else if (userFilterRating){
-    basicQuery = allProducts.orderBy("itemRating", "asc");
+  const[itemName, setItemName] = useState('');
+  const[itemPrice, setItemPrice] = useState(0);
+  const[itemDescription, setItemDescription] = useState('');
+  const[itemImage, setItemImage] = useState(null);
+  const[error, setError] = useState('');
+  const imageTypes = ['image/jpeg', 'image/png']
+  const imageHandler = (e) => {
+      let file = e.target.files[0];
+      if(file && imageTypes.includes(file.type)) {
+          setItemImage(file);
+          setError('');
+      }
+      else {
+          setItemImage(null);
+          setError('Please upload a valid image');
+      }
   }
+*/}
 
   return (
+    <div className="filtering">
 
-    <div className='filter_container'>
-      <div className = 'filter_title'>
-          <p>Filter by:</p>
-          
-          <div className='filter_display'>
-            <div className = 'filter_container_box1'>
-              {/* this is where there is going to be the filter by component */}
+      {/* this is the title  */}
+      <div id = "pageTitle">
+        <p>Filtering Product</p>
 
-            </div>
+        <div className='filter-sort'>
+            Filter by Description
+            <select>
+              <option>Price</option>
+              <option>Rating</option>
+              <option>Alphabetical Order</option>
+            </select>
+        </div>
 
-            <div className = 'filter_container_box2'>
-              {/* this is where we are going to be displaying the content of the database */}
-              {/* with all of its information */}
-            </div>
-          </div>
+        <div className='filter-size'>
+           Filter by sizing 
+            <select>
+            <option value="">All</option>
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+            </select>
+        </div>
 
       </div>
+
+      {/* below the title there is going to be 2 sections */}
+      <div className = "filtering_two">
+          <br/>
+          <br/>
+          <br/>
+        <div className="filtering_container">
+          {/* this is for the filtering portion */}
+           <div className="filtering_row">
+          
+
+           </div>
+
+           {/* this is the product display portion */}
+            <div className="filtering_row_two">
+
+            </div>
+        </div>
+      </div>
+
+
+
     </div>
+
+ 
     
   )
 }
 
-export default filteringProduct;
+export default FilteringProduct;
 
 // notes 
 
@@ -128,6 +153,33 @@ export default filteringProduct;
   //  //filtering by descending order
   //  db.collection("Products")
   //  .orderBy("itemPrice", "dsc")
+
+    // //initialization of all the variables needed
+  // var basicQuery;
+  // var userSelectName;
+  // var userFilterPrice;
+  // var userSelectPrice;
+  // var userFilterRating;
+  // var prodName; 
+  // var prodPrice;
+
+  // //this is going to be used in the html portion
+  // //use button for that 
+
+  // if (userSelectPrice){
+  //   //basicQuery = allProducts.where('itemPrice', '==', prodPrice)
+  // } 
+  // else if (userSelectName){
+  //   //basicQuery = allProducts.where('itemName', '==', prodName);
+  // } else if (userFilterPrice){
+  //   basicQuery = allProducts.orderBy("itemPrice", "asc");
+    
+  // } else if (userFilterRating){
+  //   basicQuery = allProducts.orderBy("itemRating", "asc");
+  // }
+
+
+
 
 
 

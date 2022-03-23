@@ -8,13 +8,9 @@ import NavigationBar from "./NavigationBar";
 import ProductDetails from "./ProductDetails";
 import Footer from './Footer'
 import AboutUs from "./AboutUs";
-import filteringProduct from "./filteringProduct";
 import Promotion from "./Promotion";
 import FeaturedProducts from "./FeaturedProducts";
-
-
-// import { useState } from "react";
-// import firebase from "./firebase";
+import FilteringProduct from "./FilteringProduct";
 
 function App() {
 
@@ -37,6 +33,11 @@ function App() {
                             <Checkout/>
                         </Route> 
 
+
+                        <Route path = "/filtering-product" >
+                            <FilteringProduct />
+                        </Route>
+
                         <Route path = "/ProductDetails">
                             <ProductDetails/>
                         </Route>
@@ -45,17 +46,10 @@ function App() {
                             <AboutUs />
                         </Route>
 
-                        <Route path = "/filtering-product" >
-                            <filteringProduct />
-                        </Route>
 
                         <Route path = "/promotions">
                             <Promotion />
                         </Route>
-
-
-
-
 
                         { /* pageX --> the default page, home page */ } { /* this is the default route */ }
                         <Route path = "/" >
