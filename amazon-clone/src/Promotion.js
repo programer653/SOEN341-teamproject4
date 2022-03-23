@@ -16,7 +16,6 @@ function Promotion() {
 
   return (
     <div className = "promotion">
-
         <div id="pageTitle" >
             <p>Deals of the Day</p>
 

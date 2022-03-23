@@ -2,13 +2,23 @@ import React, {useEffect, useState} from 'react';
 import Product from "./Product";
 import { motion } from "framer-motion";
 import "./FilteringProduct.css";
-import { getDatabase, collection } from "firebase/database";
+import { getDatabase, ref, query, orderByValue , get, child} from "firebase/database";
 
 
 function FilteringProduct() {
-  {/*
-  const db = getDatabase();
+  
+
+  const db = ref(getDatabase());
   const allProducts = db.collection("Products");
+
+  get(child(db, 'Products/${itemPrice}')).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());
+    } else {
+      console.log("No data available");
+    }
+  }
+  )
 
   const[itemName, setItemName] = useState('');
   const[itemPrice, setItemPrice] = useState(0);
@@ -27,7 +37,11 @@ function FilteringProduct() {
           setError('Please upload a valid image');
       }
   }
-*/}
+
+
+
+//const lowHighPrice = query(ref(allProducts), orderByValue(itemPrice));
+
 
   return (
     <div className="filtering">
@@ -39,7 +53,12 @@ function FilteringProduct() {
         <div className='filter-sort'>
             Filter by Description
             <select>
-              <option>Price</option>
+              <div>
+                <option>
+                  Price
+                  <button>{lowHighPrice}</button>
+                </option>
+              </div>
               <option>Rating</option>
               <option>Alphabetical Order</option>
             </select>
@@ -59,21 +78,8 @@ function FilteringProduct() {
 
       {/* below the title there is going to be 2 sections */}
       <div className = "filtering_two">
-          <br/>
-          <br/>
-          <br/>
-        <div className="filtering_container">
-          {/* this is for the filtering portion */}
-           <div className="filtering_row">
-          
+        {/* adding all of the elements of the database here */}
 
-           </div>
-
-           {/* this is the product display portion */}
-            <div className="filtering_row_two">
-
-            </div>
-        </div>
       </div>
 
 

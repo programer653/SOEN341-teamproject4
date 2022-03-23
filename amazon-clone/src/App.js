@@ -24,7 +24,6 @@ function App() {
                     <NavigationBar/>
                     {/* This is where we will have the banner, which will contain a few navigation fields */}
 
-
                     { /* THIS IS WHERE THE <SWITCH></SWITCH> SHOULD BE PLACED FOR CASES */ } { /* Switch --> Routes in the newer version of React */ } 
                     <Switch >
 
