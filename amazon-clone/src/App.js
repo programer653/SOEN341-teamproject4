@@ -14,13 +14,22 @@ import {useState} from "react";
 import Payment from "./Payment";
 import DisplayProduct from "./DisplayProduct";
 import {auth} from "./Config/Config";
-
+import {db} from "./Config/Config";
+import {collection, getDocs} from "firebase/firestore";
 
 function App() {
     const [{}, dispatch] = useStateValue();
+    const [products, setProducts] = useState([]);
+    const productsCollectionRef = collection(db, "Products");
 
     useEffect(() => {
         // will only run once when the app component loads
+
+        const getProducts = async () => {
+            const data = await getDocs(productsCollectionRef);
+            setProducts(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+        }
+        getProducts()
 
         auth.onAuthStateChanged(authUser => {
             console.log('The user is >>>', authUser);
@@ -47,11 +56,18 @@ function App() {
 
         // wrapping everything with a router --> allow to have pages
         <BrowserRouter >
-            <div className = "App" >
+            <div className = "App" > 
+            
             { /* rendering the header, because it is always going to be in all the pages */ } 
 
             <Header/>
             <NavigationBar/>
+            {products.map((product) => {return <div>
+                <h1>Name: {product.itemName}</h1>
+                <h1>Price: {product.itemPrice}</h1>
+
+            </div>
+            })}
 
             {/* This is where we will have the banner, which will contain a few navigation fields */}
         
@@ -86,6 +102,7 @@ function App() {
             </Route>
             { /* pageX --> the default page, home page */ } { /* this is the default route */ }
             <Route path="/Admin" component={Admin}>
+                <Admin />
                     
             </Route>
 

@@ -1,13 +1,16 @@
 import React from 'react';
 import "./Admin.css";
 import { useState } from 'react';
-import {database} from '../src/Config/Config';
+import {db} from '../src/Config/Config';
 import {storage} from '../src/Config/Config';
 import { snapshotEqual } from 'firebase/firestore/lite';
 import { ref } from 'firebase/storage';
+import {collection, addDoc} from "firebase/firestore";
 
 export const Admin = () => {
-    
+
+    const productsCollectionRef = collection(db, "Products");
+
     const[itemName, setItemName] = useState('');
     const[itemPrice, setItemPrice] = useState(0);
     const[itemDescription, setItemDescription] = useState('');
@@ -30,6 +33,10 @@ export const Admin = () => {
     const addItem = (e) => {
         e.preventDefault();
         
+    }
+
+    const addProduct = async () => {
+        await addDoc(productsCollectionRef, {itemName: itemName, itemPrice: itemPrice});
     }
 
     return (
@@ -58,7 +65,7 @@ export const Admin = () => {
                     onChange={(e)=>setItemDescription(e.target.value)} 
                     value={itemDescription} />
                 <br />
-                <button className="add-button">Add Item</button>
+                <button onClick={addProduct} className="add-button">Add Item</button>
             </form>
             {error&& <span>{error}</span>}
         </div>
