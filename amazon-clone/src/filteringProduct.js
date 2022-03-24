@@ -1,49 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, Fragment} from 'react';
 import Product from "./Product";
 import { motion } from "framer-motion";
 import "./filteringProduct.css";
 import { getDatabase, ref, query, orderByValue , get, child} from "firebase/database";
+import { v4 as uuidv4 } from "uuid";
 
 
 function FilteringProduct() {
-  
-
-  const db = ref(getDatabase());
-  const allProducts = db.collection("Products");
-
-  // get(child(db, 'Products/${itemPrice}')).then((snapshot) => {
-  //   if (snapshot.exists()) {
-  //     console.log(snapshot.val());
-  //   } else {
-  //     console.log("No data available");
-  //   }
-  // }
-  // )
-
-  const[itemName, setItemName] = useState('');
-  const[itemPrice, setItemPrice] = useState(0);
-  const[itemDescription, setItemDescription] = useState('');
-  const[itemImage, setItemImage] = useState(null);
-  const[error, setError] = useState('');
-  const imageTypes = ['image/jpeg', 'image/png']
-  const imageHandler = (e) => {
-      let file = e.target.files[0];
-      if(file && imageTypes.includes(file.type)) {
-          setItemImage(file);
-          setError('');
-      }
-      else {
-          setItemImage(null);
-          setError('Please upload a valid image');
-      }
-  }
-
-
-
-//const lowHighPrice = query(ref(allProducts), orderByValue(itemPrice));
-
 
   return (
+    <Fragment>
     <div className="filtering">
 
       {/* this is the title  */}
@@ -53,12 +19,8 @@ function FilteringProduct() {
         <div className='filter-sort'>
             Filter by Description
             <select>
-              <div>
-                <option>
-                  Price
-                  <button></button>
-                </option>
-              </div>
+              <option>Price [Low to High]</option>
+              <option>Price [High to Low]</option>
               <option>Rating</option>
               <option>Alphabetical Order</option>
             </select>
@@ -78,13 +40,12 @@ function FilteringProduct() {
 
       {/* below the title there is going to be 2 sections */}
       <div className = "filtering_two">
-        {/* adding all of the elements of the database here */}
-
       </div>
-
+   
 
 
     </div>
+    </Fragment>
 
  
     
