@@ -11,14 +11,14 @@ function FilteringProduct() {
   const db = ref(getDatabase());
   const allProducts = db.collection("Products");
 
-  get(child(db, 'Products/${itemPrice}')).then((snapshot) => {
-    if (snapshot.exists()) {
-      console.log(snapshot.val());
-    } else {
-      console.log("No data available");
-    }
-  }
-  )
+  // get(child(db, 'Products/${itemPrice}')).then((snapshot) => {
+  //   if (snapshot.exists()) {
+  //     console.log(snapshot.val());
+  //   } else {
+  //     console.log("No data available");
+  //   }
+  // }
+  // )
 
   const[itemName, setItemName] = useState('');
   const[itemPrice, setItemPrice] = useState(0);
@@ -56,7 +56,7 @@ function FilteringProduct() {
               <div>
                 <option>
                   Price
-                  <button>{lowHighPrice}</button>
+                  <button></button>
                 </option>
               </div>
               <option>Rating</option>
