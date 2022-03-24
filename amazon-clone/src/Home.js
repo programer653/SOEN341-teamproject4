@@ -1,9 +1,29 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Home.css";
 import Product from "./Product";
+import {useStateValue} from "./StateProvider";
+import Admin from "./Admin";
+import {useState} from "react";
+import {db} from "./firebase";
+import {collection, getDocs} from "firebase/firestore";
 
 
 function Home() {
+    const [{}, dispatch] = useStateValue();
+    const [products, setProducts] = useState([]);
+    const productsCollectionRef = collection(db, "Products");
+
+    useEffect(() => {
+        // will only run once when the app component loads
+
+        const getProducts = async () => {
+            const data = await getDocs(productsCollectionRef);
+            setProducts(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+        }
+        getProducts()
+
+    }, [])
+
   return (
     <div className = "home">
         <div className = "home__container">
