@@ -1,7 +1,7 @@
 import React from 'react'
 import "./NavigationBar.css"
 import {Link} from "react-router-dom";
-import FilteringProduct from './FilteringProduct';
+import filteringProduct from './filteringProduct';
 
 
 export default function NavigationBar() {

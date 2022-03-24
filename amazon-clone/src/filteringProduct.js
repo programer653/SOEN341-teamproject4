@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Product from "./Product";
 import { motion } from "framer-motion";
-import "./FilteringProduct.css";
+import "./filteringProduct.css";
 import { getDatabase, ref, query, orderByValue , get, child} from "firebase/database";
 
 

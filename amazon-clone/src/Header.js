@@ -4,7 +4,7 @@ the header of the website in this file
 */
 import React from 'react'
 import './Header.css'
-import FilteringProduct from './FilteringProduct';
+import filteringProduct from './filteringProduct';
 
 // these imports are going to be taken from material-ui.com
 import SearchIcon from "@material-ui/icons/Search";

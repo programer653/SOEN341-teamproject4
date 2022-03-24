@@ -10,7 +10,7 @@ import Footer from './Footer'
 import AboutUs from "./AboutUs";
 import Promotion from "./Promotion";
 import FeaturedProducts from "./FeaturedProducts";
-import FilteringProduct from "./FilteringProduct";
+import filteringProduct from "./filteringProduct";
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
 
 
                         <Route path = "/filtering-product" >
-                            <FilteringProduct />
+                            <filteringProduct />
                         </Route>
 
                         <Route path = "/ProductDetails">

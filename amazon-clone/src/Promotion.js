@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Product from "./Product";
 import { motion } from "framer-motion";
 import "./Promotion.css";
-import "./FilteringProduct.css";
+import "./filteringProduct.css";
 
 // could add the filtering option in this page
 
