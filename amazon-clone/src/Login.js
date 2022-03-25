@@ -19,7 +19,7 @@ function Login() {
             if (email == "aminata.lol22@gmail.com") 
             { 
             auth.then (auth => {
-                <Link to='/Admin' > some stuff </Link>
+                <Link to='/Admin'> some stuff </Link>
             }) 
             }   
             else{

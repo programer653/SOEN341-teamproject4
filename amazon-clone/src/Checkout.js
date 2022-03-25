@@ -4,6 +4,8 @@ import "./Checkout.css";
 import CheckoutProduct from "./CheckoutProduct";
 import { useStateValue } from "./StateProvider";
 import Subtotal from "./Subtotal";
+import Admin from "./Admin";
+import {db} from "./firebase";
 
 function Checkout() {
 //To render out the cart
@@ -20,9 +22,9 @@ const [{basket}, dispatch] = useStateValue();
             {basket.map(item => (
               <CheckoutProduct
               id= {item.id}
-              title= {item.title}
-              image = {item.image}            
-              price={item.price}
+              itemName= {item.itemName}
+              itemImage = {item.itemImage}            
+              itemPrice={item.itemPrice}
               rating={item.rating}
               />
               

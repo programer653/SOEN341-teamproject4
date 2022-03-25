@@ -2,6 +2,7 @@ import React from 'react'
 import Product from "./Product";
 import "./ProductDetails.css";
 import {useStateValue} from "./StateProvider";
+import Admin from "./Admin";
 
 function ProductDetails({id, title, image, description, price, rating}) {
 

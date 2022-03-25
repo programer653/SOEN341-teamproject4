@@ -2,8 +2,9 @@ import React from "react";
 import AnimationPage from "./AnimationPage";
 import "./CheckoutProduct.css";
 import { useStateValue } from "./StateProvider";
+import {db} from "./firebase";
 
-function CheckoutProduct({id, image, title, price, rating}) {
+function CheckoutProduct({id, itemImage, itemName, itemPrice, rating}) {
     
     const [{basket}, dispatch] = useStateValue();
 
@@ -21,12 +22,12 @@ function CheckoutProduct({id, image, title, price, rating}) {
         <div className="checkoutProduct">
 
             {/* contains only the image of the product */}
-            <img className="checkoutProduct__image" src={image}/>
+            <img className="checkoutProduct__image" src={itemImage}/>
 
             {/* contains every other information of the product - title, price, rating, 'Remove' button */}
             <div className="checkoutProduct__info">
-                <p className="checkoutProduct__title">{title}</p>
-                <p className="checkoutProduct__price"><small>$</small><strong>{price}</strong></p>
+                <p className="checkoutProduct__title">{itemName}</p>
+                <p className="checkoutProduct__price"><small>$</small><strong>{itemPrice}</strong></p>
 
                 <div className="checkoutProduct__rating">
                     {Array(rating)

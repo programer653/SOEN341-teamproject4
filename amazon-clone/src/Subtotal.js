@@ -6,6 +6,8 @@ import {useStateValue} from "./StateProvider";
 import {getBasketTotal} from "./reducer";
 import {useHistory} from "react-router-dom";
 import AnimationPage from "./AnimationPage";
+import Admin from "./Admin";
+import {db} from "./firebase";
 
 function Subtotal() {
     const history = useHistory();
