@@ -9,7 +9,7 @@ function CheckoutProduct({id, itemImage, itemName, itemPrice, rating}) {
     const [{basket}, dispatch] = useStateValue();
 
 
-    // Function to delete an exsisting item from the cart
+    // Function to delete an existing item from the cart
     const removeFromBasket = () => {
         dispatch({
             type : 'REMOVE_FROM_BASKET', 
