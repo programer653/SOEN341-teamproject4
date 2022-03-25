@@ -12,15 +12,19 @@
         "@testing-library/react": "^12.1.3",
         "@testing-library/user-event": "^13.5.0",
         "@types/react-transition-group": "^4.4.4",
+        "express": "^4.17.3",
         "firebase": "^9.6.8",
         "framer-motion": "^6.2.8",
+        "mocha": "^9.2.2",
         "react": "^17.0.2",
         "react-currency-format": "^1.1.0",
         "react-dom": "^17.0.2",
         "react-router-dom": "^5.2.0",
         "react-scripts": "^5.0.0",
         "react-state-provider": "^0.0.4",
+        "should": "^13.2.3",
         "styled-components": "^5.3.3",
+        "supertest": "^6.2.2",
         "uuid": "^8.3.2",
         "web-vitals": "^2.1.4"
     },
@@ -29,7 +33,6 @@
         "build": "react-scripts build",
         "test": "node node_modules/mocha/bin/mocha ./tests",
         "eject": "react-scripts eject"
-
     },
     "eslintConfig": {
         "extends": [
