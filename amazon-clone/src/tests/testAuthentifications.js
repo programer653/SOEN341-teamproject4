@@ -15,7 +15,7 @@ describe("GET /api/currentuser", function() {
 
     before(function(done) {
         authenticatedUser
-            .post("/api/login")
+            .post("/login")
             .send(userCredentials)
             .end(function(err, response) {
                 expect(response.statusCode).to.equal(200);
@@ -25,7 +25,7 @@ describe("GET /api/currentuser", function() {
     //Status code 200 should have been sent.
 
     it("should return a 200 response if the user can log in", function(done) {
-        authenticatedUser.get("http://localhost:8000/api/login", function(
+        authenticatedUser.get("http://localhost:3000/login", function(
             err,
             response,
             body
