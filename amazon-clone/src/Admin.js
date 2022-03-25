@@ -54,7 +54,7 @@ export const Admin = () => {
                 <br />
                 <label htmlFor="item-price">Price: </label>
                 <input type="number" className="product-price" required
-                    onChange={(e)=>setItemPrice(e.target.value)} value={itemPrice}/>
+                    onChange={(e)=>setItemPrice(e.target.value)} value={Number(itemPrice)}/>
                 <br />
                 <label htmlFor="item-image">Product Image: </label>
                 <input type="file" id="file"

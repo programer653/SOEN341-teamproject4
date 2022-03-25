@@ -4,7 +4,7 @@ export const initialState = {
 
 //maps into the basket, iterate in the basket and tally up in the total
 export const getBasketTotal = (basket) =>
-    basket?.reduce((amount, item) => item.price + amount, 0);  
+    basket?.reduce((amount, item) => item.itemPrice + amount, 0);  
 
     
 // state: the state of the application

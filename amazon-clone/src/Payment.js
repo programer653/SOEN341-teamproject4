@@ -1,12 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Payment.css";
 import { getBasketTotal } from "./reducer";
 import {useStateValue} from "./StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
 import {Link} from "react-router-dom";
+import Admin from "./Admin";
 
 function Payment() {
     const [{basket}, dispatch] = useStateValue();
+
+    const [products, setProducts] = useState([]);
+    const[itemName, setItemName] = useState('');
+    const[itemPrice, setItemPrice] = useState(0);
+    const[itemImage, setItemImage] = useState(null);
 
     return (
         <div className="payment">
@@ -34,9 +40,9 @@ function Payment() {
                         {basket.map(item => (
                             <CheckoutProduct
                             id={item.id}
-                            title={item.title}
-                            image={item.image}
-                            price={item.price}
+                            itemName={item.itemName}
+                            itemImage={item.itemImage}
+                            itemPrice={item.itemPrice}
                             rating={item.rating}
                             />
                         ))}
