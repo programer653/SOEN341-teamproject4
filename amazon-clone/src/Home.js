@@ -8,6 +8,40 @@ import {db} from "./firebase";
 import {collection, getDocs} from "firebase/firestore";
 
 function Home() {
+
+    const productsCollectionRef = collection(db, "Products");
+
+    const [products, setProducts] = useState([]);
+    const[itemName, setItemName] = useState('');
+    const[itemPrice, setItemPrice] = useState(0);
+    const[itemImage, setItemImage] = useState(null);
+
+    useEffect(() => {
+        // will only run once when the app component loads
+        const getProducts = async () => {
+            const data = await getDocs(productsCollectionRef);
+            setProducts(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+            setItemName(data.docs.map((doc) => ({...doc.data(), itemName:doc.itemName})));
+            setItemPrice(data.docs.map((doc) => ({...doc.data(), itemPrice:doc.itemPrice})));
+
+        }
+        getProducts()
+
+    }, [])
+
+
+   
+   //for the product calling 
+    /*
+        {products.map((product) => {return <div>
+                    <Link to="/ProductDetails"> 
+                        <p>{product.itemName}</p>
+                    </Link>
+                    <p className = "product__price"><small>$ </small><strong>{product.itemPrice}</strong></p>
+            </div>
+    */
+            //function Product({id, itemName, itemPrice, itemDescription, rating, itemImage }) {
+
     
   return (
     <div className = "home">
@@ -17,9 +51,11 @@ function Home() {
        
             <div className="homeContainer">
                 <div className = "home__row">
-                    <Product />
-                    <Product />
-
+                    {products.map((product) =>{
+                        return (
+                            <Product id = {product.id} itemName={product.itemName} itemPrice={product.itemPrice}></Product>
+                        )
+                    })}
                 </div>
 
                 {/* <div className = "home__row">

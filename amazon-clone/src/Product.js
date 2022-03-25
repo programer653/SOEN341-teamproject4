@@ -14,19 +14,7 @@ function Product({id, itemName, itemPrice, itemDescription, rating, itemImage })
     // dispath: how we are going to be manipulating the data 
     const [{basket}, dispatch] = useStateValue();
 
-    const [products, setProducts] = useState([]);
-    const productsCollectionRef = collection(db, "Products");
 
-    useEffect(() => {
-        // will only run once when the app component loads
-
-        const getProducts = async () => {
-            const data = await getDocs(productsCollectionRef);
-            setProducts(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
-        }
-        getProducts()
-
-    }, [])
 
     console.log("this is the basket >>>", basket);
 
@@ -50,13 +38,11 @@ function Product({id, itemName, itemPrice, itemDescription, rating, itemImage })
         {/* this is where we are going to be putting the id, price, name, photo of the product */}
 
         <div className = "product__info">
-            {products.map((product) => {return <div>
-                    <Link to="/ProductDetails"> 
-                        <p>{product.itemName}</p>
-                    </Link>
-                    <p className = "product__price"><small>$ </small><strong>{product.itemPrice}</strong></p>
-            </div>
-            })}
+             <Link to="/ProductDetails"> 
+                  <p>{itemName}</p>
+             </Link>
+            <p className = "product__price"><small>$ </small><strong>{itemPrice}</strong></p>
+            
             <div className = "product__rating">
             {/* this is going to be rating, but dynamic because it could change anytime */}
                     {Array(rating)
