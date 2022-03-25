@@ -3,13 +3,33 @@ import Product from "./Product";
 import { motion } from "framer-motion";
 import "./filteringProduct.css";
 import { getDatabase, ref, query, orderByValue , get, child} from "firebase/database";
-
+import {db} from "./firebase";
+import {collection, getDocs} from "firebase/firestore";
 
 function FilteringProduct() {
   
 
-  const db = ref(getDatabase());
-  const allProducts = db.collection("Products");
+  const productsCollectionRef = collection(db, "Products");
+
+  const [products, setProducts] = useState([]);
+  const[itemName, setItemName] = useState('');
+  const[itemPrice, setItemPrice] = useState(0);
+  const[itemImage, setItemImage] = useState(null);
+
+  useEffect(() => {
+      // will only run once when the app component loads
+      const getProducts = async () => {
+          const data = await getDocs(productsCollectionRef);
+          setProducts(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+          setItemName(data.docs.map((doc) => ({...doc.data(), itemName:doc.itemName})));
+          setItemPrice(data.docs.map((doc) => ({...doc.data(), itemPrice:doc.itemPrice})));
+
+      }
+      getProducts()
+
+  }, [])
+  // const db = ref(getDatabase());
+  // const allProducts = db.collection("Products");
 
   // get(child(db, 'Products/${itemPrice}')).then((snapshot) => {
   //   if (snapshot.exists()) {
@@ -20,23 +40,23 @@ function FilteringProduct() {
   // }
   // )
 
-  const[itemName, setItemName] = useState('');
-  const[itemPrice, setItemPrice] = useState(0);
-  const[itemDescription, setItemDescription] = useState('');
-  const[itemImage, setItemImage] = useState(null);
-  const[error, setError] = useState('');
-  const imageTypes = ['image/jpeg', 'image/png']
-  const imageHandler = (e) => {
-      let file = e.target.files[0];
-      if(file && imageTypes.includes(file.type)) {
-          setItemImage(file);
-          setError('');
-      }
-      else {
-          setItemImage(null);
-          setError('Please upload a valid image');
-      }
-  }
+  // const[itemName, setItemName] = useState('');
+  // const[itemPrice, setItemPrice] = useState(0);
+  // const[itemDescription, setItemDescription] = useState('');
+  // const[itemImage, setItemImage] = useState(null);
+  // const[error, setError] = useState('');
+  // const imageTypes = ['image/jpeg', 'image/png']
+  // const imageHandler = (e) => {
+  //     let file = e.target.files[0];
+  //     if(file && imageTypes.includes(file.type)) {
+  //         setItemImage(file);
+  //         setError('');
+  //     }
+  //     else {
+  //         setItemImage(null);
+  //         setError('Please upload a valid image');
+  //     }
+  // }
 
 
 
@@ -79,15 +99,13 @@ function FilteringProduct() {
       {/* below the title there is going to be 2 sections */}
       <div className = "filtering_two">
         {/* adding all of the elements of the database here */}
-
+        {products.map((product) =>{
+          return (
+            <Product id = {product.id} itemName={product.itemName} itemPrice={product.itemPrice}></Product>
+          )
+        })} 
       </div>
-
-
-
     </div>
-
- 
-    
   )
 }
 

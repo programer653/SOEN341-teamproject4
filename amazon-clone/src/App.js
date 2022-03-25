@@ -18,7 +18,7 @@ import Footer from './Footer'
 import AboutUs from "./AboutUs";
 import Promotion from "./Promotion";
 import FeaturedProducts from "./FeaturedProducts";
-import filteringProduct from "./filteringProduct";
+import FilteringProduct from "./filteringProduct";
 
 function App() {
     const [{}, dispatch] = useStateValue();
@@ -74,7 +74,7 @@ function App() {
 
 
                         <Route path = "/filtering-product" >
-                            <filteringProduct />
+                            <FilteringProduct />
                         </Route>
 
                         <Route path = "/ProductDetails">
