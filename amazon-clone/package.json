@@ -31,7 +31,7 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "node node_modules/mocha/bin/mocha ./tests",
+        "test": "node node_modules/mocha/bin/mocha ./src/tests",
         "eject": "react-scripts eject"
     },
     "eslintConfig": {
