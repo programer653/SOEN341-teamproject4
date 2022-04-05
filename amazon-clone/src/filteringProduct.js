@@ -5,7 +5,7 @@ import "./filteringProduct.css";
 //import { getDatabase, ref, query, orderByValue , get, child} from "firebase/database";
 import { v4 as uuidv4 } from "uuid";
 import {db} from "./firebase";
-import {collection, getDocs} from "firebase/firestore";
+import {collection, getDocs, orderBy} from "firebase/firestore";
 
 
 
@@ -30,6 +30,11 @@ function FilteringProduct() {
       getProducts()
 
   }, [])
+
+  //alphabetical order
+  const alphaOrder =  productsCollectionRef.orderBy('itemName');
+
+
 
   return (
     <Fragment>
@@ -57,9 +62,6 @@ function FilteringProduct() {
             <option value="L">Large</option>
             </select>
         </div>
-
-
-        
 
       </div>
 
