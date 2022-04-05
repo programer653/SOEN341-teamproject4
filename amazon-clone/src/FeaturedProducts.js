@@ -63,4 +63,4 @@ const moveDot = index => {
 )
 }
 
-export default FeaturedProducts
+export default FeaturedProducts;

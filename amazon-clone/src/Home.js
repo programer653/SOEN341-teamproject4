@@ -1,9 +1,48 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Home.css";
 import Product from "./Product";
-
+import {useStateValue} from "./StateProvider";
+import Admin from "./Admin";
+import {useState} from "react";
+import {db} from "./firebase";
+import {collection, getDocs} from "firebase/firestore";
 
 function Home() {
+
+    const productsCollectionRef = collection(db, "Products");
+
+    const [products, setProducts] = useState([]);
+    const[itemName, setItemName] = useState('');
+    const[itemPrice, setItemPrice] = useState(0);
+    const[itemImage, setItemImage] = useState(null);
+
+    useEffect(() => {
+        // will only run once when the app component loads
+        const getProducts = async () => {
+            const data = await getDocs(productsCollectionRef);
+            setProducts(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+            setItemName(data.docs.map((doc) => ({...doc.data(), itemName:doc.itemName})));
+            setItemPrice(data.docs.map((doc) => ({...doc.data(), itemPrice:doc.itemPrice})));
+
+        }
+        getProducts()
+
+    }, [])
+
+
+   
+   //for the product calling 
+    /*
+        {products.map((product) => {return <div>
+                    <Link to="/ProductDetails"> 
+                        <p>{product.itemName}</p>
+                    </Link>
+                    <p className = "product__price"><small>$ </small><strong>{product.itemPrice}</strong></p>
+            </div>
+    */
+            //function Product({id, itemName, itemPrice, itemDescription, rating, itemImage }) {
+
+    
   return (
     <div className = "home">
         <div className = "home__container">
@@ -12,35 +51,26 @@ function Home() {
        
             <div className="homeContainer">
                 <div className = "home__row">
-                    <Product id = "1234" title = "Gucci Belt" price ={290.00} rating = {5} image = "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1580211003/406831_0YA0G_1000_001_100_0000_Light.jpg" />
-                    <Product id = "1234" title = "Gucci Belt" price ={290.00} rating = {5} image = "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1580211003/406831_0YA0G_1000_001_100_0000_Light.jpg" />
-
-                    {/* product component */}
-
+                    {products.map((product) =>{
+                        return (
+                            <Product id = {product.id} itemName={product.itemName} itemPrice={product.itemPrice}></Product>
+                        )
+                    })}
                 </div>
 
-                <div className = "home__row">
+                {/* <div className = "home__row">
                 
-                    <Product id = "1234" title = "Gucci Belt" price ={290.00} rating = {5} image = "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1580211003/406831_0YA0G_1000_001_100_0000_Light.jpg" />
-                    <Product id = "1234" title = "Gucci Belt" price ={290.00} rating = {5} image = "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1580211003/406831_0YA0G_1000_001_100_0000_Light.jpg" />
-                    <Product id = "1234" title = "Gucci Belt" price ={290.00} rating = {5} image = "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1580211003/406831_0YA0G_1000_001_100_0000_Light.jpg" />
-                    <Product id = "1234" title = "Gucci Belt" price ={290.00} rating = {5} image = "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1580211003/406831_0YA0G_1000_001_100_0000_Light.jpg" />
+                    <Product />
+                    <Product />
+                    
 
+                </div> */}
 
-                    {/* product component */}
-                    {/* product component */}
-                    {/* product component */}
-
-                </div>
-
-                <div className = "home__row">
-                    <Product id = "1234" title = "Gucci Belt" price ={290.00} rating = {5} image = "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1580211003/406831_0YA0G_1000_001_100_0000_Light.jpg" />
-                    <Product id = "1234" title = "Gucci Belt" price ={290.00} rating = {5} image = "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1580211003/406831_0YA0G_1000_001_100_0000_Light.jpg" />
-                    <Product id = "1234" title = "Gucci Belt" price ={290.00} rating = {5} image = "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1580211003/406831_0YA0G_1000_001_100_0000_Light.jpg" />
-
-                   
-                    {/* product component */}
-                </div>
+                {/* <div className = "home__row">
+                    <Product />
+                    <Product />
+            
+                </div> */}
             </div>
             
         </div>

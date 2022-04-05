@@ -41,14 +41,9 @@ function FilteringProduct() {
       {/* below the title there is going to be 2 sections */}
       <div className = "filtering_two">
       </div>
-   
-
-
     </div>
     </Fragment>
-
- 
-    
+   
   )
 }
 
