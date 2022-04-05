@@ -81,7 +81,7 @@ function App() {
                             <ProductDetails/>
                         </Route>
 
-                        <Route path="/admin">
+                        <Route path="/Admin">
                             <Admin />
                         </Route>
 
