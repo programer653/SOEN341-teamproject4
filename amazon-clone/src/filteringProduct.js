@@ -2,11 +2,34 @@ import React, {useEffect, useState, Fragment} from 'react';
 import Product from "./Product";
 import { motion } from "framer-motion";
 import "./filteringProduct.css";
-import { getDatabase, ref, query, orderByValue , get, child} from "firebase/database";
+//import { getDatabase, ref, query, orderByValue , get, child} from "firebase/database";
 import { v4 as uuidv4 } from "uuid";
+import {db} from "./firebase";
+import {collection, getDocs} from "firebase/firestore";
+
 
 
 function FilteringProduct() {
+
+  const productsCollectionRef = collection(db, "Products");
+
+  const [products, setProducts] = useState([]);
+  const[itemName, setItemName] = useState('');
+  const[itemPrice, setItemPrice] = useState(0);
+  const[itemImage, setItemImage] = useState(null);
+
+  useEffect(() => {
+      // will only run once when the app component loads
+      const getProducts = async () => {
+          const data = await getDocs(productsCollectionRef);
+          setProducts(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+          setItemName(data.docs.map((doc) => ({...doc.data(), itemName:doc.itemName})));
+          setItemPrice(data.docs.map((doc) => ({...doc.data(), itemPrice:doc.itemPrice})));
+
+      }
+      getProducts()
+
+  }, [])
 
   return (
     <Fragment>
@@ -21,7 +44,6 @@ function FilteringProduct() {
             <select>
               <option>Price [Low to High]</option>
               <option>Price [High to Low]</option>
-              <option>Rating</option>
               <option>Alphabetical Order</option>
             </select>
         </div>
@@ -36,10 +58,18 @@ function FilteringProduct() {
             </select>
         </div>
 
+
+        
+
       </div>
 
       {/* below the title there is going to be 2 sections */}
       <div className = "filtering_two">
+        {products.map((product) =>{
+            return (
+              <Product id = {product.id} itemName={product.itemName} itemPrice={product.itemPrice}></Product>
+            )
+        })}
       </div>
     </div>
     </Fragment>

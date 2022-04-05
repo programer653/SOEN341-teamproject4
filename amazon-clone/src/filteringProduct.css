@@ -2,6 +2,15 @@
   background:linear-gradient(pink, rgb(230, 225, 231));
 }
 
+.filtering_two{
+  display: flex; 
+  flex-direction:row;
+  z-index: -1; 
+  margin-top:50px;
+  margin-left: 5px; 
+  margin-right: 5px; 
+}
+
 .filter-sort{
   font: Helvetica ;
 }
