@@ -37,15 +37,6 @@ function Promotion() {
   
     }, [])
 
-    // productsCollectionRef.where('itemSale').onSnapshot((querySnapshot)=>{
-    //     const items = [];
-    //     querySnapshot.forEach((doc) => {
-    //         items.push(doc.data());
-    //     });
-
-    //     setItemSale(items);
-    // })
-
   
   return (
     <div className = "promotion">

@@ -9,7 +9,7 @@ import {Link} from "react-router-dom";
 import AnimationPage from './AnimationPage';
 
 // to promote reusability, we are going to be making functions that we could call when needed
-function Product({id, itemName, itemPrice, itemDescription, rating, itemImage }) {
+function Product({id, itemName, itemPrice, itemDescription, rating, itemImage, itemSale}) {
     
     // dispath: how we are going to be manipulating the data 
     const [{basket}, dispatch] = useStateValue();
@@ -29,6 +29,7 @@ function Product({id, itemName, itemPrice, itemDescription, rating, itemImage })
                 itemDescription: itemDescription,
                 itemImage: itemImage,
                 rating: rating,
+                itemSale: itemSale,
             }
         })
     }
@@ -51,7 +52,7 @@ function Product({id, itemName, itemPrice, itemDescription, rating, itemImage })
                     )} */}
             </div>
         </div>
-        
+        {/* need to display the content of the picture  */}
         <img src = {itemImage} alt = ""/>
         <AnimationPage>
             <button onClick={addToBasket}>Add to Cart </button> 

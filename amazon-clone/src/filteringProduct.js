@@ -13,6 +13,15 @@ function FilteringProduct() {
 
   const productsCollectionRef = collection(db, "Products");
 
+  // //Alphabetical order 
+  // const alphaOrder= collection("Products").orderBy("itemName", "asc");
+  
+  // //Descending price 
+  // const descPrice = collection("Products").orderBy("itemPrice", "desc");
+
+  // //Ascending Price 
+  // const ascPrice = collection("Products").orderBy("itemPrice", "asc");
+
   const [products, setProducts] = useState([]);
   const[itemName, setItemName] = useState('');
   const[itemPrice, setItemPrice] = useState(0);
@@ -31,9 +40,7 @@ function FilteringProduct() {
 
   }, [])
 
-  //alphabetical order
-  //const alphaOrder =  productsCollectionRef.orderBy('itemName');
-
+  
 
 
   return (
@@ -53,15 +60,6 @@ function FilteringProduct() {
             </select>
         </div>
 
-        <div className='filter-size'>
-           Filter by sizing 
-            <select>
-            <option value="">All</option>
-            <option value="S">Small</option>
-            <option value="M">Medium</option>
-            <option value="L">Large</option>
-            </select>
-        </div>
 
       </div>
 
