@@ -45,10 +45,10 @@ function Product({id, itemName, itemPrice, itemDescription, rating, itemImage })
             
             <div className = "product__rating">
             {/* this is going to be rating, but dynamic because it could change anytime */}
-                    {Array(rating)
+                    {/* {Array(rating)
                     .fill()
                     .map( (_, i) => (<p>☆</p>) 
-                    )}
+                    )} */}
             </div>
         </div>
         
