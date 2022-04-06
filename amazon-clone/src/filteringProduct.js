@@ -32,7 +32,7 @@ function FilteringProduct() {
   }, [])
 
   //alphabetical order
-  const alphaOrder =  productsCollectionRef.orderBy('itemName');
+  //const alphaOrder =  productsCollectionRef.orderBy('itemName');
 
 
 
