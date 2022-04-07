@@ -44,13 +44,6 @@ function Product({id, itemName, itemPrice, itemDescription, rating, itemImage, i
              </Link>
             <p className = "product__price"><small>$ </small><strong>{itemPrice}</strong></p>
             
-            <div className = "product__rating">
-            {/* this is going to be rating, but dynamic because it could change anytime */}
-                    {/* {Array(rating)
-                    .fill()
-                    .map( (_, i) => (<p>☆</p>) 
-                    )} */}
-            </div>
         </div>
         {/* need to display the content of the picture  */}
         <img src = {itemImage} alt = ""/>

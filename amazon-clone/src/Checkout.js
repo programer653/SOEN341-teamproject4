@@ -25,7 +25,6 @@ const [{basket, user}, dispatch] = useStateValue();
               itemName= {item.itemName}
               itemImage = {item.itemImage}            
               itemPrice={item.itemPrice}
-              rating={item.rating}
               />
               
             ))}

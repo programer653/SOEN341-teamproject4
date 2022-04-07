@@ -59,11 +59,11 @@ function Header() {
 
                 </div>
 
-                <div className = "header__option">
+                {/* <div className = "header__option">
                   <span className = "header__optionOne">Your</span>
                   <span className = "header__optionTwo">Prime</span>
 
-                </div>
+                </div> */}
 
                 {/* This will direct the user to the checkout page when the cart is clicked */}
                 <Link to="/checkout">

@@ -4,7 +4,7 @@ import "./CheckoutProduct.css";
 import { useStateValue } from "./StateProvider";
 import {db} from "./firebase";
 
-function CheckoutProduct({id, itemImage, itemName, itemPrice, rating}) {
+function CheckoutProduct({id, itemImage, itemName, itemPrice}) {
     
     const [{basket}, dispatch] = useStateValue();
 
@@ -28,14 +28,6 @@ function CheckoutProduct({id, itemImage, itemName, itemPrice, rating}) {
             <div className="checkoutProduct__info">
                 <p className="checkoutProduct__title">{itemName}</p>
                 <p className="checkoutProduct__price"><small>$</small><strong>{itemPrice}</strong></p>
-
-                <div className="checkoutProduct__rating">
-                    {Array(rating)
-                    .fill()
-                    .map((_,i) => (
-                        <p>*</p>
-                    ))}
-                </div>
                 
                 {/* When the 'Remove from Cart' button is clicked, the item will be removed*/}
                 
