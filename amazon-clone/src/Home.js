@@ -6,7 +6,7 @@ import Admin from "./Admin";
 import {useState} from "react";
 import {db} from "./firebase";
 import {collection, getDocs} from "firebase/firestore";
-
+import banner from './HomePage/WelcomeForkShop.png'
 function Home() {
 
     const productsCollectionRef = collection(db, "Products");
@@ -29,20 +29,6 @@ function Home() {
         getProducts()
 
     }, [])
-
-
-   
-   //for the product calling 
-    /*
-        {products.map((product) => {return <div>
-                    <Link to="/ProductDetails"> 
-                        <p>{product.itemName}</p>
-                    </Link>
-                    <p className = "product__price"><small>$ </small><strong>{product.itemPrice}</strong></p>
-            </div>
-    */
-            //function Product({id, itemName, itemPrice, itemDescription, rating, itemImage }) {
-
     
   return (
     <div className = "home">
@@ -51,6 +37,13 @@ function Home() {
             <img className = "home__image" src = "https://images.unsplash.com/photo-1569982175971-d92b01cf8694?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"/>   
        
             <div className="homeContainer">
+                {/* adding the home page banner */}
+                <div>
+                    <img src = {banner} ></img>
+                    
+                </div>
+
+                {/* displaying the products on the home page */}
                 <div className = "home__row">
                     {products.map((product) =>{
                         return (

@@ -20,6 +20,7 @@ import Promotion from "./Promotion";
 import FeaturedProducts from "./FeaturedProducts";
 import FilteringProduct from "./filteringProduct";
 import CheckoutApproved from "./CheckoutApproved";
+import FeatProd from "./FeatProd";
 
 function App() {
     const [{}, dispatch] = useStateValue();
@@ -94,6 +95,10 @@ function App() {
                             <AboutUs />
                         </Route>
 
+                        <Route path = "/FeatProd">
+                            <FeatProd />
+
+                        </Route>
 
                         <Route path = "/promotions">
                             <Promotion />
@@ -107,7 +112,6 @@ function App() {
                     </Switch > 
 
                     <Footer />
-
 
             </div> 
 

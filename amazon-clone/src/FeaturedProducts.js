@@ -2,7 +2,6 @@ import React ,{useState} from 'react';
 import './FeaturedProducts.css';
 import dataSlider from './dataSlider';
 import BtnSlider from './BtnSlider'
-import img1 from './Imgs/1.jpg'
 
 
 function FeaturedProducts() {

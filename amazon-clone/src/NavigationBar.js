@@ -9,26 +9,25 @@ export default function NavigationBar() {
     <div class="navigationBar">
 
         <div class="dropdownMenu">
-            <button class="dropbutton"> <strong>Dropdown Menu↓</strong><i class="fa fa-caret-down"></i></button>
+            <button class="dropbutton"> <strong>Product Categories↓</strong><i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
                 <h3>Category Name</h3>
                 <hr></hr>
-                <a href="#">Best Sellers</a>
-                <a href="#">New Releases</a>
-                <a href="#">Deals of the Day</a>
-                <a href="#">Filtering Products</a>
-                <hr></hr>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#">Link 6</a>
+                <a href="#">Clothing</a>
+                <a href="#">Accessories</a>
+                <a href="#">Food</a>
+                <a href="#">Electronics</a>
+                {/* <a href="#">Filtering Products</a> */}
+                <hr></hr> 
             </div>
         </div> 
 
-        <a href="#new_releases">New Releases</a>
-        <a href="#best_sellers">Best Sellers</a>
-        <a href="#pet_supplies">Pet Supplies</a>
-        <a href="#home_supplies">Home Supplies</a>
-        <a href="#electronics">Electronics</a>
+        {/* <a href="#home_supplies">Clothing</a>
+        <a href="#electronics">Electronics</a> */}
+
+        <Link to = "/FeatProd">
+           <a href = '/FeatProd'>Featured Products</a>
+        </Link>
 
         <Link to = "/promotions">
            <a href = '/promotions'>Deals of the Day</a>
