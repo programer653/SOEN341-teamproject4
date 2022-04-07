@@ -23,6 +23,7 @@ function Home() {
             setProducts(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
             setItemName(data.docs.map((doc) => ({...doc.data(), itemName:doc.itemName})));
             setItemPrice(data.docs.map((doc) => ({...doc.data(), itemPrice:doc.itemPrice})));
+            setItemImage(data.docs.map((doc) => ({...doc.data(), itemImage:doc.itemImage})));
 
         }
         getProducts()
@@ -53,7 +54,7 @@ function Home() {
                 <div className = "home__row">
                     {products.map((product) =>{
                         return (
-                            <Product id = {product.id} itemName={product.itemName} itemPrice={product.itemPrice}></Product>
+                            <Product id = {product.id} itemName={product.itemName} itemPrice={product.itemPrice} itemImage={product.itemImage}></Product>
                         )
                     })}
                 </div>
