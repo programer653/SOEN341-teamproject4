@@ -2,6 +2,7 @@ import React ,{useState} from 'react';
 import './FeaturedProducts.css';
 import dataSlider from './dataSlider';
 import BtnSlider from './BtnSlider'
+import img1 from './Imgs/1.jpg'
 
 
 function FeaturedProducts() {
@@ -35,14 +36,14 @@ const moveDot = index => {
       
     <div className="container-slider">
         <h1>FEATURED PRODUCTS</h1>
-    {dataSlider.map((obj, index) => {
+        {dataSlider.map((obj, index) => {
         return (
                 <div
                 key={obj.id}
                 className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
                 >
                     <img 
-                    src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`} 
+                    src={`/Imgs/${index + 1}.jpg`} 
                     />
                 </div>
             )
