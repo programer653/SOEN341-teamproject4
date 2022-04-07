@@ -9,7 +9,7 @@ import {Link} from "react-router-dom";
 import AnimationPage from './AnimationPage';
 
 // to promote reusability, we are going to be making functions that we could call when needed
-function Product({id, itemName, itemPrice, itemDescription, rating, itemImage }) {
+function Product({id, itemName, itemPrice, itemDescription, itemImage }) {
     
     // dispath: how we are going to be manipulating the data 
     const [{basket}, dispatch] = useStateValue();
@@ -28,7 +28,6 @@ function Product({id, itemName, itemPrice, itemDescription, rating, itemImage })
                 itemPrice: itemPrice,
                 itemDescription: itemDescription,
                 itemImage: itemImage,
-                rating: rating,
             }
         })
     }
@@ -43,13 +42,6 @@ function Product({id, itemName, itemPrice, itemDescription, rating, itemImage })
              </Link>
             <p className = "product__price"><small>$ </small><strong>{itemPrice}</strong></p>
             
-            <div className = "product__rating">
-            {/* this is going to be rating, but dynamic because it could change anytime */}
-                    {Array(rating)
-                    .fill()
-                    .map( (_, i) => (<p>☆</p>) 
-                    )}
-            </div>
         </div>
         
         <img src = {itemImage} alt = ""/>

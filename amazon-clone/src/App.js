@@ -19,6 +19,7 @@ import AboutUs from "./AboutUs";
 import Promotion from "./Promotion";
 import FeaturedProducts from "./FeaturedProducts";
 import FilteringProduct from "./filteringProduct";
+import CheckoutApproved from "./CheckoutApproved";
 
 function App() {
     const [{}, dispatch] = useStateValue();
@@ -70,6 +71,10 @@ function App() {
 
                         <Route path="/payment">
                             <Payment />
+                        </Route>
+
+                        <Route path="/CheckoutApproved">
+                            <CheckoutApproved />
                         </Route>
 
 

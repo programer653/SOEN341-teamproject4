@@ -4,7 +4,7 @@ import "./ProductDetails.css";
 import {useStateValue} from "./StateProvider";
 import Admin from "./Admin";
 
-function ProductDetails({id, title, image, description, price, rating}) {
+function ProductDetails({id, title, image, description, price}) {
 
     // dispath: how we are going to be manipulating the data 
     const [{basket}, dispatch] = useStateValue();
@@ -20,7 +20,6 @@ function ProductDetails({id, title, image, description, price, rating}) {
                 title: title,
                 image: image,
                 price: price,
-                rating: rating,
             }
         })
     }    
@@ -31,9 +30,7 @@ function ProductDetails({id, title, image, description, price, rating}) {
         <img className="productDetails__image">{image}</img>
         <p className="productDetails__description"></p>
         <p className="productDetails__price">{price}</p>
-        <div className="productDetails__rating">
 
-        </div>
         <div className="productDetails">
 
         </div>

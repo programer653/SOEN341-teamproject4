@@ -34,7 +34,7 @@ function Payment() {
                 {/* Payment section - review items */}
                 <div className="payment-section">
                     <div className="payment-title">
-                        <h3>Review items and delivery</h3>
+                        <h3>Review items</h3>
                     </div>
                     <div className="payment-items">
                         {basket.map(item => (
@@ -56,6 +56,21 @@ function Payment() {
                     </div>
                     <div className="payment-details">
                         {/* Use Stripe */}
+                        <label htmlFor="card-name">Cardholder Name: </label>
+                        <input type="text" className="card-name" required/>
+                        <br/>
+                        <label htmlFor="card-number">Card Number: </label>
+                        <input type="text" className="card-number" required/>
+                        <br/>
+                        <label htmlFor="card-name">Expiry Date: </label>
+                        <input type="text" className="card-name" required/>
+                        <br/>
+                        <label htmlFor="card-cvc">cvv: </label>
+                        <input type="text" className="card-cvc" required/>
+                        <br/>
+                        <Link to="./CheckoutApproved">
+                            <button>Continue</button>
+                        </Link>
                     </div>
                 </div>
 
