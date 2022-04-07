@@ -82,7 +82,7 @@ function App() {
                             <FilteringProduct />
                         </Route>
 
-                        <Route path = "/ProductDetails">
+                        <Route path = "/ProductDetails/:id">
                             <ProductDetails/>
                         </Route>
 

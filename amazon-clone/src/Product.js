@@ -14,8 +14,6 @@ function Product({id, itemName, itemPrice, itemDescription, itemImage }) {
     // dispath: how we are going to be manipulating the data 
     const [{basket}, dispatch] = useStateValue();
 
-
-
     console.log("this is the basket >>>", basket);
 
     const addToBasket = () => {
@@ -37,7 +35,7 @@ function Product({id, itemName, itemPrice, itemDescription, itemImage }) {
         {/* this is where we are going to be putting the id, price, name, photo of the product */}
 
         <div className = "product__info">
-             <Link to="/ProductDetails"> 
+             <Link to="/ProductDetails/:id"> 
                   <p>{itemName}</p>
              </Link>
             <p className = "product__price"><small>$ </small><strong>{itemPrice}</strong></p>

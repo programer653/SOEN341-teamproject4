@@ -1,43 +1,33 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Product from "./Product";
 import "./ProductDetails.css";
 import {useStateValue} from "./StateProvider";
+import {useState} from "react";
 import Admin from "./Admin";
+import {db} from "./firebase";
+import {getDoc, doc} from "firebase/firestore";
+import { useParams } from "react-router-dom";
 
-function ProductDetails({id, title, image, description, price}) {
+function ProductDetails() {
 
-    // dispath: how we are going to be manipulating the data 
-    const [{basket}, dispatch] = useStateValue();
+    const [product, setProduct] = useState();
+    const params = useParams();
 
-    console.log("this is the basket >>>", basket);
+    useEffect(() => {
+        // will only run once when the app component loads
+        const getProduct = async () => {
+            const product = await getDoc(doc(db, "Products", params.id));
 
-    const addToBasket = () => {
-        //dispatch (shoot) the item into the data layer
-        dispatch({
-            type: 'ADD_TO_BASKET',
-            item: {
-                id: id,
-                title: title,
-                image: image,
-                price: price,
-            }
-        })
-    }    
+        }
+        getProduct()
 
-    <div className="productDetails">
-        
-        <p className="productDetails__title">{title}</p>
-        <img className="productDetails__image">{image}</img>
-        <p className="productDetails__description"></p>
-        <p className="productDetails__price">{price}</p>
+    }, [])
 
-        <div className="productDetails">
+    return(
+        <div>
 
         </div>
-        <button onClick={addToBasket}>Add to Cart </button>
-
-    </div>
-
+    );
 }
 
 export default ProductDetails
