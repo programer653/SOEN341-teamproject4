@@ -4,9 +4,9 @@ import {db} from "./firebase";
 import {collection, getDocs, orderBy} from "firebase/firestore";
 
 
+function Food() {
 
-function Electronics() {
-    const productsCollectionRef = collection(db, "Electronics");
+    const productsCollectionRef = collection(db, "Food");
 
     const [products, setProducts] = useState([]);
     const[itemName, setItemName] = useState('');
@@ -27,14 +27,9 @@ function Electronics() {
     }, [])
 
 
-
-
   return (
     <div>
-        
-        Electronics
-
-
+        Food
         <div>
          <div>
             <div className = "filtering_two">
@@ -47,10 +42,8 @@ function Electronics() {
          </div>
         </div>
 
-
     </div>
-
   )
 }
 
-export default Electronics
+export default Food

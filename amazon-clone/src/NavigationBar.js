@@ -15,7 +15,7 @@ export default function NavigationBar() {
                 <hr></hr>
                 <a href="#">Clothing</a>
                 <a href="#">Accessories</a>
-                <a href="#">Food</a>
+                <a href="/food">Food</a>
                 <a href="/electronics">Electronics</a>
                 {/* <a href="#">Filtering Products</a> */}
                 <hr></hr> 

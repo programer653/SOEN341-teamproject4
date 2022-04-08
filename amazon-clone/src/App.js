@@ -22,6 +22,8 @@ import FilteringProduct from "./filteringProduct";
 import CheckoutApproved from "./CheckoutApproved";
 import FeatProd from "./FeatProd";
 import Electronics from "./Electronics"
+import Food from "./Food"
+
 
 function App() {
     const [{}, dispatch] = useStateValue();
@@ -107,6 +109,10 @@ function App() {
 
                         <Route path = "/electronics">
                             <Electronics />
+                        </Route>
+
+                        <Route path = "/food">
+                            <Food />
                         </Route>
 
 
