@@ -7,9 +7,10 @@ import {db} from "./firebase";
 import {collection, getDocs} from "firebase/firestore";
 import {Link} from "react-router-dom";
 import AnimationPage from './AnimationPage';
+import {useHistory, useParams} from "react-router-dom";
 
 // to promote reusability, we are going to be making functions that we could call when needed
-function Product({id, itemName, itemPrice, itemDescription, rating, itemImage, itemSale}) {
+function Product({id, itemName, itemPrice, itemDescription, itemImage, itemSale}) {
     
     // dispath: how we are going to be manipulating the data 
     const [{basket}, dispatch] = useStateValue();
@@ -28,7 +29,6 @@ function Product({id, itemName, itemPrice, itemDescription, rating, itemImage, i
                 itemPrice: itemPrice,
                 itemDescription: itemDescription,
                 itemImage: itemImage,
-                rating: rating,
                 itemSale: itemSale,
             }
         })
@@ -39,7 +39,7 @@ function Product({id, itemName, itemPrice, itemDescription, rating, itemImage, i
         {/* this is where we are going to be putting the id, price, name, photo of the product */}
 
         <div className = "product__info">
-             <Link to="/ProductDetails"> 
+             <Link to={`/ProductDetails/${id}`}> 
                   <p>{itemName}</p>
              </Link>
             <p className = "product__price"><small>$ </small><strong>{itemPrice}</strong></p>

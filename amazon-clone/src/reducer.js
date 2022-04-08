@@ -13,6 +13,11 @@ const reducer = (state, action) => {
     // dispatch the action
     console.log(action);
     switch (action.type) {
+        case "EMPTY_BASKET":
+            return {
+                ...state,
+                basket:[]
+            }
         case "ADD_TO_BASKET":
             return {
                 ...state, //Return original state of the cart

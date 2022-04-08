@@ -24,6 +24,7 @@ import FeatProd from "./FeatProd";
 import Electronics from "./Electronics"
 import Food from "./Food"
 import Clothing from "./Clothing"
+import OrderHistory from "./OrderHistory";
 
 
 function App() {
@@ -69,6 +70,10 @@ function App() {
                             <Login />
                         </Route>
 
+                        <Route path="/OrderHistory">
+                            <OrderHistory />
+                        </Route>
+
                         { /* page1 --> the checkout page */ } 
                         <Route path = "/checkout" >
                             <Checkout/>
@@ -87,7 +92,7 @@ function App() {
                             <FilteringProduct />
                         </Route>
 
-                        <Route path = "/ProductDetails">
+                        <Route path = "/ProductDetails/:id">
                             <ProductDetails/>
                         </Route>
 

@@ -14,6 +14,13 @@ function Payment() {
     const[itemPrice, setItemPrice] = useState(0);
     const[itemImage, setItemImage] = useState(null);
 
+    const emptyBasket = () => {
+        dispatch({
+            type : 'EMPTY_BASKET', 
+            
+        })
+    }
+
     return (
         <div className="payment">
             <div className="payment-container">
@@ -43,7 +50,6 @@ function Payment() {
                             itemName={item.itemName}
                             itemImage={item.itemImage}
                             itemPrice={item.itemPrice}
-                            rating={item.rating}
                             />
                         ))}
                     </div>
@@ -71,6 +77,7 @@ function Payment() {
                         <Link to="./CheckoutApproved">
                             <button>Continue</button>
                         </Link>
+                        <button onClick={emptyBasket}>Cancel Order</button>
                     </div>
                 </div>
 

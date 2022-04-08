@@ -1,43 +1,33 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Product from "./Product";
 import "./ProductDetails.css";
 import {useStateValue} from "./StateProvider";
-import Admin from "./Admin";
+import {db} from "./firebase";
+import {useHistory, useParams, Link} from "react-router-dom";
 
-function ProductDetails({id, title, image, description, price}) {
+function ProductDetails() {  
 
-    // dispath: how we are going to be manipulating the data 
-    const [{basket}, dispatch] = useStateValue();
+    const [product, setProduct] = useState([]);
+    const {id} = useParams();
 
-    console.log("this is the basket >>>", basket);
+    // useEffect(() => {
+    //     db.child(`Products/${id}`).get().then((snapshot) => {
+    //         if(snapshot.exists()) {
+    //             setProduct({...snapshot.val()});
+    //         }
+    //         else {
+    //             setProduct({})
+    //         }
+    //     });
+    // }, [id]);
 
-    const addToBasket = () => {
-        //dispatch (shoot) the item into the data layer
-        dispatch({
-            type: 'ADD_TO_BASKET',
-            item: {
-                id: id,
-                title: title,
-                image: image,
-                price: price,
-            }
-        })
-    }    
+    console.log("product", product);
 
-    <div className="productDetails">
-        
-        <p className="productDetails__title">{title}</p>
-        <img className="productDetails__image">{image}</img>
-        <p className="productDetails__description"></p>
-        <p className="productDetails__price">{price}</p>
-
-        <div className="productDetails">
-
+    return (
+        <div>
+            <h2>hello</h2>
         </div>
-        <button onClick={addToBasket}>Add to Cart </button>
+    );
+};
 
-    </div>
-
-}
-
-export default ProductDetails
+export default ProductDetails;
