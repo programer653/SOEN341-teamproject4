@@ -8,12 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 import {db} from "./firebase";
 import {collection, getDocs, orderBy} from "firebase/firestore";
 
-
-
-
-
 function FeatProd() {
-
 
     const productsCollectionRef = collection(db, "FeaturedProducts");
 
@@ -29,7 +24,6 @@ function FeatProd() {
             setProducts(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
             setItemName(data.docs.map((doc) => ({...doc.data(), itemName:doc.itemName})));
             setItemPrice(data.docs.map((doc) => ({...doc.data(), itemPrice:doc.itemPrice})));
-  
         }
         getProducts()
   
