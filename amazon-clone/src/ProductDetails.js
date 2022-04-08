@@ -23,8 +23,16 @@ function ProductDetails() {
 
     }, [])
 
+
+    console.log(Producttemp)
+
+
     return(
         <div>
+            <h1>Product info</h1>
+            {
+                product&& (<h1>{Product.name} </h1>)
+            }
 
         </div>
     );
