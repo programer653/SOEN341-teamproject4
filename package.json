@@ -14,7 +14,7 @@
         "web-vitals": "^1.1.2"
     },
     "scripts": {
-        "test": "node ./amazon - clone / node_modules / mocha / bin / mocha--exit. / tests ",
+
         "start": "SET PORT=4200 && react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
