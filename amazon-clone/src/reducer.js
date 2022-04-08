@@ -1,5 +1,6 @@
 export const initialState = {
     basket: [],
+    
 };
 
 //maps into the basket, iterate in the basket and tally up in the total

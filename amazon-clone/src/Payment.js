@@ -55,13 +55,16 @@ function Payment() {
                     </div>
                 </div>
 
+                <div className="payment-section">
+
+                </div>
+
                 {/* Payment section - payment method */}
                 <div className="payment-section">
                     <div className="payment-title">
                         <h3>Payment Method</h3>
                     </div>
                     <div className="payment-details">
-                        {/* Use Stripe */}
                         <label htmlFor="card-name">Cardholder Name: </label>
                         <input type="text" className="card-name" required/>
                         <br/>

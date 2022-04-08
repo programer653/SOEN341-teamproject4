@@ -26,7 +26,6 @@ import Food from "./Food"
 import Clothing from "./Clothing"
 import OrderHistory from "./OrderHistory";
 
-
 function App() {
     const [{}, dispatch] = useStateValue();
 
