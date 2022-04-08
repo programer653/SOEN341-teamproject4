@@ -42,6 +42,9 @@ function Home(product) {
     const inputSearch = (event) => {
         const data1 = event.target.value;
         setSearch(data1);
+        setProducts(products.filter((product) =>
+        products.itemName.toLowerCase().includes(search.toLowerCase())
+        ))
     };
 
     // const searchItem = (e) => {
