@@ -4,6 +4,7 @@
 .home{
     display: flex; 
     overflow-Y:hidden;
+    background: linear-gradient(lavender, rgb(216, 184, 216));
 } 
 
 /* using the entire row for the product */

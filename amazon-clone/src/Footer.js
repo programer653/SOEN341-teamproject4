@@ -35,11 +35,6 @@ function Footer() {
                 </section>
             </section>
 
-            <section className='footer-middle'>
-                <Link to = "/Team-Members">
-                            <a href = '/Team-Members'> Team Members </a>
-                </Link>
-            </section>
 
             <section className='footer-right'>
                 <Link to = "/ContactUs">

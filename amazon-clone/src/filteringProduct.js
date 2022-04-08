@@ -67,7 +67,7 @@ function FilteringProduct() {
       <div className = "filtering_two">
         {products.map((product) =>{
             return (
-              <Product id = {product.id} itemName={product.itemName} itemPrice={product.itemPrice}></Product>
+              <Product id = {product.id} itemName={product.itemName} itemPrice={product.itemPrice} itemImage = {product.itemImage}></Product>
             )
         })}
       </div>
