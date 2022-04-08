@@ -48,7 +48,9 @@ function App() {
         })
     }, [])
 
-    return (
+    render()
+    {
+        return (
         
         // wrapping everything with a router --> allow to have pages
         <BrowserRouter >
@@ -112,7 +114,13 @@ function App() {
             </div> 
 
         </BrowserRouter>
+    
+
+
+    
     );
+        }
+        
 }
 
 
