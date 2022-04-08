@@ -5,16 +5,15 @@ import "./filteringProduct.css";
 //import { getDatabase, ref, query, orderByValue , get, child} from "firebase/database";
 import { v4 as uuidv4 } from "uuid";
 import {db} from "./firebase";
-import {collection, getDocs, orderBy} from "firebase/firestore";
+import {collection, getDocs, query, orderBy} from "firebase/firestore";
+import {Link} from "react-router-dom";
 
 
 
 function FilteringProduct() {
 
-  const productsCollectionRef = collection(db, "Products");
-
   // //Alphabetical order 
-  // const alphaOrder= collection("Products").orderBy("itemName", "asc");
+  //const alphaOrder= query(productsCollectionRef.orderBy("itemName", "asc"));
   
   // //Descending price 
   // const descPrice = collection("Products").orderBy("itemPrice", "desc");
@@ -22,11 +21,17 @@ function FilteringProduct() {
   // //Ascending Price 
   // const ascPrice = collection("Products").orderBy("itemPrice", "asc");
 
-  const [products, setProducts] = useState([]);
+  //product details
+  const[products, setProducts] = useState([]);
   const[itemName, setItemName] = useState('');
   const[itemPrice, setItemPrice] = useState(0);
   const[itemImage, setItemImage] = useState(null);
+  const[loading, setLoading] = useState(false);
 
+  //database
+  const productsCollectionRef = collection(db, "Products");
+ 
+ 
   useEffect(() => {
       // will only run once when the app component loads
       const getProducts = async () => {
@@ -36,7 +41,7 @@ function FilteringProduct() {
           setItemPrice(data.docs.map((doc) => ({...doc.data(), itemPrice:doc.itemPrice})));
 
       }
-      getProducts()
+      getProducts();
 
   }, [])
 
