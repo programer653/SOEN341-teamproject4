@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect} from 'react';
 import "./Product.css";
 import {useStateValue} from "./StateProvider";
 import Admin from "./Admin";

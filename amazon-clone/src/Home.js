@@ -15,6 +15,7 @@ function Home() {
     const[itemName, setItemName] = useState('');
     const[itemPrice, setItemPrice] = useState(0);
     const[itemImage, setItemImage] = useState(null);
+    const[search, setSearch] = useState("");
 
     useEffect(() => {
         // will only run once when the app component loads
@@ -29,6 +30,13 @@ function Home() {
         getProducts()
 
     }, [])
+
+    const searchItem = (e) => {
+        e.preventDefault();
+        setProducts(products.filter((product)=>
+            products.itemName.toLowerCase().includes(search.toLowerCase())
+        ));
+    }
     
   return (
     <div className = "home">
@@ -43,13 +51,23 @@ function Home() {
                     
                 </div>
 
-                {/* displaying the products on the home page */}
-                <div className = "home__row">
-                    {products.map((product) =>{
-                        return (
-                            <Product id = {product.id} itemName={product.itemName} itemPrice={product.itemPrice} itemImage={product.itemImage}></Product>
-                        )
-                    })}
+                <div>
+                    {/* adding the search bar here  */}
+                    <br />
+                    <br />
+                    <h1>Looking for something in particular?</h1>
+                    <form onSubmit={(e) =>{searchItem(e)}}>
+                        <input className = "header__searchInput" onChange={(e) => {setSearch(e.target.value)}}/>
+                        <button type = "submit">Search</button>
+                    </form>
+                    {/* displaying the products on the home page */}
+                    <div className = "home__row">
+                        {products.map((product) =>{
+                            return (
+                                <Product id = {product.id} itemName={product.itemName} itemPrice={product.itemPrice} itemImage={product.itemImage}></Product>
+                            )
+                        })}
+                    </div>
                 </div>
 
             </div>

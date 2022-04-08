@@ -37,12 +37,11 @@ function Header() {
       </Link>
 
         <div className = "header__search">
-
+{/*
             <input className = "header__searchInput" type = "text"/>
 
-            {/* logo */}
             <SearchIcon className = "header__searchIcon" />
-            
+*/}            
             <div className = "header__nav">
               <Link to={!user && '/login'}>
                 <div onClick={handleAuthentification} className = "header__option">
