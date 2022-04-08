@@ -9,7 +9,7 @@ export default function NavigationBar() {
     <div class="navigationBar">
 
         <div class="dropdownMenu">
-            <button class="dropbutton"> <strong>Product Categories↓</strong><i class="fa fa-caret-down"></i></button>
+            <button class="dropbutton"> <strong>Filter Products by Category ↓</strong><i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
                 <hr></hr>
                 <a href="/clothing">Clothing</a>

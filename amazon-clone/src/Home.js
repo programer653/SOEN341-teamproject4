@@ -7,7 +7,15 @@ import {useState} from "react";
 import {db} from "./firebase";
 import {collection, getDocs} from "firebase/firestore";
 import banner from './HomePage/WelcomeForkShop.png'
-function Home() {
+import SearchIcon from "@material-ui/icons/Search";
+import {Link} from "react-router-dom";
+import ProductData from "./ProductData";
+import AsyncSelect from 'react-select/async';
+
+
+
+
+function Home(product) {
 
     const productsCollectionRef = collection(db, "Products");
 
@@ -15,6 +23,7 @@ function Home() {
     const[itemName, setItemName] = useState('');
     const[itemPrice, setItemPrice] = useState(0);
     const[itemImage, setItemImage] = useState(null);
+    const[search, setSearch] = useState("");
 
     useEffect(() => {
         // will only run once when the app component loads
@@ -29,6 +38,21 @@ function Home() {
         getProducts()
 
     }, [])
+
+    const inputSearch = (event) => {
+        const data1 = event.target.value;
+        setSearch(data1);
+        setProducts(products.filter((product) =>
+        products.itemName.toLowerCase().includes(search.toLowerCase())
+        ))
+    };
+
+    // const searchItem = (e) => {
+    //     e.preventDefault();
+    //     setProducts(products.filter((product)=>
+    //         products.itemName.toLowerCase().includes(search.toLowerCase())
+    //     ));
+    // }
     
   return (
     <div className = "home">
@@ -43,16 +67,58 @@ function Home() {
                     
                 </div>
 
-                {/* displaying the products on the home page */}
-                <div className = "home__row">
-                    {products.map((product) =>{
-                        return (
-                            <Product id = {product.id} itemName={product.itemName} itemPrice={product.itemPrice} itemImage={product.itemImage}></Product>
-                        )
-                    })}
+                <div>
+                    {/* adding the search bar here  */}
+                    <br />
+                    <br />
+                    <div>
+                        <h1>Looking for something in particular?</h1>
+                        <input
+                            className="header_searchInput"
+                            placeholder="Search for products"
+                            type="text"
+                            value={search}
+                            onChange={inputSearch}
+                        />  
+                        <SearchIcon className="header_searchIcon" />
+
+                            {/* <div className="searchresult" key={product.id}>
+                                {ProductData.filter((product) => {
+                                if (search == "") {
+                                    return;
+                                } else if (
+                                    product.title.toLowerCase().includes(search.toLowerCase())
+                                ) {
+                                    return product;
+                                 }
+                                }).map((product) => {
+                                    return (
+                                        <Link to={`/products/${product.id}`}>
+                                        <Product
+                                            itemName={product.itemName}
+                                            itemImage={product.itemImage}
+                                            itemPrice={product.price}
+                                        />
+                                        </Link>
+                                    );
+                                })}
+                            </div> */}
+                    </div>   
+                  
+                    {/* displaying the products on the home page */}
+                    <div className = "home__row">
+                        {products.map((product) =>{
+                            return (
+                                <Product id = {product.id} itemName={product.itemName} itemPrice={product.itemPrice} itemImage={product.itemImage}></Product>
+                            )
+                        })}
+                    </div>
                 </div>
 
+ 
+
             </div>
+   
             
         </div>
 
