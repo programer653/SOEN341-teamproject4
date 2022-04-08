@@ -15,7 +15,8 @@ export const Admin = () => {
     const[itemPrice, setItemPrice] = useState(0);
     const[itemDescription, setItemDescription] = useState('');
     const[itemImage, setItemImage] = useState(null);
-    const[error, setError] = useState('');
+    const[imageUrl, setImageUrl] = useState("");
+    const[error, setError] = useState(null);
     const imageTypes = ['image/jpeg', 'image/png']
 
     const imageHandler = (e) => {
@@ -36,8 +37,33 @@ export const Admin = () => {
     }
 
     const addProduct = async () => {
-        await addDoc(productsCollectionRef, {itemName: itemName, itemPrice: itemPrice});
-    }
+        await addDoc(productsCollectionRef, {itemName: itemName, itemPrice: itemPrice, itemImage: itemImage, itemDescription: itemDescription});
+        // const uploadTask = storage.ref(`images/${itemImage.name}`).put(itemImage);
+        // uploadTask.on(
+        //     "state-changed",
+        //     snapshot => {},
+        //     error => {
+        //         console.log(error);
+        //     },
+        //     () => {
+        //         storage
+        //             .ref("images")
+        //             .child(itemImage.name)
+        //             .getDownloadURL()
+        //             .then(url => {
+        //                 db   
+        //                     .firestore()
+        //                     .collection('Products')
+        //                     .add({
+        //                         imageUrl: url
+        //                     })
+        //                     .then(() => {
+        //                         setImageUrl('')
+        //                     })
+        //             });
+        //     }
+        // );
+    };
 
     return (
 
@@ -57,7 +83,7 @@ export const Admin = () => {
                     onChange={(e)=>setItemPrice(e.target.value)} value={Number(itemPrice)}/>
                 <br />
                 <label htmlFor="item-image">Product Image: </label>
-                <input type="file" id="file"
+                <input type="file"
                     onChange={imageHandler}/>
                 <br />
                 <label htmlFor="item-description">Description: </label>
