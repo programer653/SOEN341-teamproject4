@@ -15,7 +15,7 @@ function Promotion() {
 
     const [visible,setVisible] = useState(false);
 
-    const productsCollectionRef = collection(db, "Products");
+    const productsCollectionRef = collection(db, "Promotion");
 
     const [products, setProducts] = useState([]);
     const[itemName, setItemName] = useState('');
@@ -42,9 +42,6 @@ function Promotion() {
     <div className = "promotion">
         <div id="pageTitle" >
             <p>Deals of the Day</p>
-            <br/>
-           
-
         </div>
 
         <div className='promo_container'>
@@ -53,7 +50,7 @@ function Promotion() {
                
                 {products.map((product) =>{
                         return (
-                            <Product id = {product.id} itemName={product.itemName} itemPrice={product.itemSale} itemImage = {product.itemImage}></Product>
+                            <Product  id = {product.id} itemName={product.itemName} itemPrice={product.itemPrice} itemSale = {product.itemSale} itemImage = {product.itemImage}></Product>
                             
                         )
                 })}

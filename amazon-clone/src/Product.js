@@ -43,7 +43,7 @@ function Product({id, itemName, itemPrice, itemDescription, rating, itemImage, i
                   <p>{itemName}</p>
              </Link>
             <p className = "product__price"><small>$ </small><strong>{itemPrice}</strong></p>
-            
+            <p><strike>{itemSale}</strike></p>
         </div>
         {/* need to display the content of the picture  */}
         <img src = {itemImage} alt = ""/>
