@@ -120,7 +120,6 @@ function App() {
                             <Clothing />
                         </Route>
 
-
                         { /* pageX --> the default page, home page */ } { /* this is the default route */ }
                         <Route path = "/" >
                             {/* <FeaturedProducts /> */}
