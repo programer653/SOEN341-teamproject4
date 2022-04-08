@@ -16,7 +16,7 @@ export default function NavigationBar() {
                 <a href="#">Clothing</a>
                 <a href="#">Accessories</a>
                 <a href="#">Food</a>
-                <a href="#">Electronics</a>
+                <a href="/electronics">Electronics</a>
                 {/* <a href="#">Filtering Products</a> */}
                 <hr></hr> 
             </div>
@@ -36,6 +36,8 @@ export default function NavigationBar() {
         <Link to = "/filtering-product">
            <a href = '/filtering-product'>Filtering Products</a>
         </Link>
+
+
        
     </div>
   )

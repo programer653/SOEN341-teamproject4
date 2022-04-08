@@ -21,6 +21,7 @@ import FeaturedProducts from "./FeaturedProducts";
 import FilteringProduct from "./filteringProduct";
 import CheckoutApproved from "./CheckoutApproved";
 import FeatProd from "./FeatProd";
+import Electronics from "./Electronics"
 
 function App() {
     const [{}, dispatch] = useStateValue();
@@ -103,6 +104,11 @@ function App() {
                         <Route path = "/promotions">
                             <Promotion />
                         </Route>
+
+                        <Route path = "/electronics">
+                            <Electronics />
+                        </Route>
+
 
                         { /* pageX --> the default page, home page */ } { /* this is the default route */ }
                         <Route path = "/" >
