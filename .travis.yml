@@ -14,4 +14,4 @@ cache:
 script:
   - cd amazon-clone
   - npm install
-  - npm run test
+  - npm test
