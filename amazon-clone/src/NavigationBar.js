@@ -11,19 +11,14 @@ export default function NavigationBar() {
         <div class="dropdownMenu">
             <button class="dropbutton"> <strong>Product Categories↓</strong><i class="fa fa-caret-down"></i></button>
             <div class="dropdown-content">
-                <h3>Category Name</h3>
                 <hr></hr>
-                <a href="#">Clothing</a>
-                <a href="#">Accessories</a>
+                <a href="/clothing">Clothing</a>
                 <a href="/food">Food</a>
                 <a href="/electronics">Electronics</a>
                 {/* <a href="#">Filtering Products</a> */}
                 <hr></hr> 
             </div>
         </div> 
-
-        {/* <a href="#home_supplies">Clothing</a>
-        <a href="#electronics">Electronics</a> */}
 
         <Link to = "/FeatProd">
            <a href = '/FeatProd'>Featured Products</a>

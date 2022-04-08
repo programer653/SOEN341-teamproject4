@@ -23,6 +23,7 @@ import CheckoutApproved from "./CheckoutApproved";
 import FeatProd from "./FeatProd";
 import Electronics from "./Electronics"
 import Food from "./Food"
+import Clothing from "./Clothing"
 
 
 function App() {
@@ -113,6 +114,10 @@ function App() {
 
                         <Route path = "/food">
                             <Food />
+                        </Route>
+
+                        <Route path = "/clothing">
+                            <Clothing />
                         </Route>
 
 
