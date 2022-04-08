@@ -24,7 +24,7 @@ function ProductDetails() {
     }, [])
 
 
-    console.log(Producttemp)
+//console.log(Producttemp)
 
 
     return(
