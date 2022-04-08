@@ -25,15 +25,7 @@ function ProductDetails({id, title, image, description, price}) {
     }    
 
     <div className="productDetails">
-        
-        <p className="productDetails__title">{title}</p>
-        <img className="productDetails__image">{image}</img>
-        <p className="productDetails__description"></p>
-        <p className="productDetails__price">{price}</p>
-
-        <div className="productDetails">
-
-        </div>
+        <Product></Product>
         <button onClick={addToBasket}>Add to Cart </button>
 
     </div>

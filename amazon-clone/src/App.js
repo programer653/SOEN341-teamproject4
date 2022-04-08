@@ -24,6 +24,7 @@ import FeatProd from "./FeatProd";
 import Electronics from "./Electronics"
 import Food from "./Food"
 import Clothing from "./Clothing"
+import Product from "./Product";
 
 
 function App() {
