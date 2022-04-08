@@ -34,7 +34,8 @@ function Product({id, itemName, itemPrice, itemDescription, itemImage }) {
     < div className = "product">
         {/* this is where we are going to be putting the id, price, name, photo of the product */}
 
-        <div className = "product__info">
+        <div className = "product__info"
+        data-testid='product-1'>
              <Link to="/ProductDetails/:id"> 
                   <p>{itemName}</p>
              </Link>

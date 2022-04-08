@@ -10,7 +10,7 @@ const userCredentials = {
 
 describe("GET /api/currentuser", function() {
     //POST the userCredentials to /api/login, and expect a response of status 200.
-    var server = require("../index");
+    var server = require("./index");
     var authenticatedUser = request.agent(server);
 
     before(function(done) {
