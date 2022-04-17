@@ -9,6 +9,7 @@
     transition: width 0.4s ease-in-out;
     width: 50%;
 }
+
 .admin-container .product-form .add-button {
     background-color: rgb(186, 176, 230);
     width: 100px;
